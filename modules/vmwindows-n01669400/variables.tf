@@ -3,13 +3,11 @@
 variable "resource_group_name" {
   type        = string
   description = "The name of the resource group."
-  default     = "n9400-RG"
 }
 
 variable "location" {
   type        = string
   description = "The Azure region where the resource group will be created."
-  default     = "canadacentral"
 }
 
 variable "tags" {
@@ -18,8 +16,7 @@ variable "tags" {
 }
 
 variable "prefix" {
-  type    = string
-  default = "n9400"
+  type = string
 }
 
 variable "subnet_id" {
@@ -47,8 +44,21 @@ variable "admin_password" {
 }
 
 # Define the number of Windows VMs to create
-variable "vm_count" {
+variable "vm_win_count" {
   type        = number
   default     = 1
   description = "Number of Windows VMs to create"
+}
+
+# Define the size of the Windows VM
+variable "vm_size" {
+  type        = string
+  description = "Size of the Windows VMs"
+  default     = "Standard_B1ms"
+}
+
+variable "storage_type" {
+  type        = string
+  description = "Storage type for OS disk"
+  default     = "Standard_LRS"
 }

@@ -4,7 +4,7 @@
 resource "azurerm_managed_disk" "disks" {
   for_each = tomap({ for idx, val in var.linux_vm_ids : idx => val })
 
-  name                 = "${var.prefix}-DATADISK-${each.key}"
+  name                 = "${var.prefix}-Datadisk-${each.key}"
   resource_group_name  = var.resource_group_name
   location             = var.location
   storage_account_type = var.storage_account_type
@@ -24,7 +24,7 @@ resource "azurerm_virtual_machine_data_disk_attachment" "linux_disks" {
 
 # Windows VM - A separate managed disk
 resource "azurerm_managed_disk" "windows_disk" {
-  name                 = "${var.prefix}-WIN-DISK"
+  name                 = "${var.prefix}-Win-Disk"
   resource_group_name  = var.resource_group_name
   location             = var.location
   storage_account_type = var.storage_account_type

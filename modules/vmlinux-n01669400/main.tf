@@ -13,7 +13,7 @@ resource "azurerm_availability_set" "linux" {
 
 # Define the Azure Public IP Address for Linux VMs
 resource "azurerm_public_ip" "linux-pip" {
-  for_each            = toset(["0", "1", "2"])
+  for_each            = toset([for i in range(var.vm_linux_count) : tostring(i)])
   name                = "${var.prefix}-PIP-LINUX-${each.key}"
   resource_group_name = var.resource_group_name
   location            = var.location
@@ -24,7 +24,7 @@ resource "azurerm_public_ip" "linux-pip" {
 
 # Define the Azure Network Interface for Linux VMs
 resource "azurerm_network_interface" "linux-nic" {
-  for_each            = toset(["0", "1", "2"])
+  for_each            = toset([for i in range(var.vm_linux_count) : tostring(i)])
   name                = "${var.prefix}-NIC-LINUX-${each.key}"
   resource_group_name = var.resource_group_name
   location            = var.location
@@ -40,7 +40,7 @@ resource "azurerm_network_interface" "linux-nic" {
 
 # Define the Azure Linux Virtual Machine
 resource "azurerm_linux_virtual_machine" "linux-vm" {
-  for_each                        = toset(["0", "1", "2"])
+  for_each                        = toset([for i in range(var.vm_linux_count) : tostring(i)])
   name                            = "${var.prefix}-VM-LINUX-${each.key}"
   resource_group_name             = var.resource_group_name
   location                        = var.location
@@ -73,3 +73,4 @@ resource "azurerm_linux_virtual_machine" "linux-vm" {
 
   tags = var.tags
 }
+

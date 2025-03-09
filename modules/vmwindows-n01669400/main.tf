@@ -14,7 +14,7 @@ resource "azurerm_availability_set" "windows" {
 
 # Define the Azure Public IP Address for Windows VMs
 resource "azurerm_public_ip" "win-pip" {
-  count               = var.vm_count
+  count               = var.vm_win_count
   name                = "${var.prefix}-PIP-WINDOWS-${count.index}"
   resource_group_name = var.resource_group_name
   location            = var.location
@@ -26,7 +26,7 @@ resource "azurerm_public_ip" "win-pip" {
 
 # Define the Azure Network Interface for Windows VMs
 resource "azurerm_network_interface" "win-nic" {
-  count               = var.vm_count
+  count               = var.vm_win_count
   name                = "${var.prefix}-NIC-WINDOWS-${count.index}"
   resource_group_name = var.resource_group_name
   location            = var.location
@@ -43,12 +43,12 @@ resource "azurerm_network_interface" "win-nic" {
 
 # Define the Azure Windows Virtual Machine
 resource "azurerm_windows_virtual_machine" "win-vm" {
-  count               = var.vm_count
+  count               = var.vm_win_count
   name                = "${var.prefix}-WVM-${count.index}"
   resource_group_name = var.resource_group_name
   location            = var.location
   availability_set_id = azurerm_availability_set.windows.id
-  size                = "Standard_B1ms"
+  size                = var.vm_size
   admin_username      = "adminuser"
   admin_password      = var.admin_password
 
@@ -56,7 +56,7 @@ resource "azurerm_windows_virtual_machine" "win-vm" {
 
   os_disk {
     caching              = "ReadWrite"
-    storage_account_type = "Standard_LRS"
+    storage_account_type = var.storage_type
   }
 
   source_image_reference {
@@ -75,7 +75,7 @@ resource "azurerm_windows_virtual_machine" "win-vm" {
 
 # Define the Azure Virtual Machine Extension for Antimalware
 resource "azurerm_virtual_machine_extension" "antimalware" {
-  count                = var.vm_count
+  count                = var.vm_win_count
   name                 = "IaaSAntimalware"
   virtual_machine_id   = azurerm_windows_virtual_machine.win-vm[count.index].id
   publisher            = "Microsoft.Azure.Security"
