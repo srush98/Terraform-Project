@@ -1,3 +1,5 @@
+# File: modules/datadisk-n01669400/outputs.tf
+
 output "linux_managed_disk_names" {
   description = "The managed disk names for the Linux VMs."
   value       = { for k, v in azurerm_managed_disk.disks : k => v.name }

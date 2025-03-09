@@ -1,5 +1,6 @@
-# File: modules/loadbalancer-9400/main.tf
+# File: modules/loadbalancer-n01669400/main.tf
 
+# Resource block for creating an Azure Load Balancer
 resource "azurerm_lb" "lb" {
   name                = "${var.prefix}-LB"
   resource_group_name = var.resource_group_name
@@ -14,6 +15,7 @@ resource "azurerm_lb" "lb" {
 
 }
 
+# Resource block for creating an Azure Public IP
 resource "azurerm_public_ip" "lb" {
   name                = "${var.prefix}-PIP-LB"
   resource_group_name = var.resource_group_name
@@ -22,18 +24,21 @@ resource "azurerm_public_ip" "lb" {
   tags                = var.tags
 }
 
+# Resource block for creating a backend address pool
 resource "azurerm_lb_backend_address_pool" "backend_pool" {
   name            = "backend-pool"
   loadbalancer_id = azurerm_lb.lb.id
 }
 
+# Resource block for creating backend address pool association
 resource "azurerm_network_interface_backend_address_pool_association" "linux" {
   count                   = 3
   network_interface_id    = var.linux_nic_ids[count.index]
   backend_address_pool_id = azurerm_lb_backend_address_pool.backend_pool.id
-  ip_configuration_name   = "internal"
+  ip_configuration_name   = "ipconfig1"
 }
 
+# Resource block for creating a load balancer rule
 resource "azurerm_lb_rule" "rule" {
   name                           = "http-rule"
   loadbalancer_id                = azurerm_lb.lb.id
@@ -45,6 +50,7 @@ resource "azurerm_lb_rule" "rule" {
   probe_id                       = azurerm_lb_probe.probe.id
 }
 
+# Resource block for creating a health probe
 resource "azurerm_lb_probe" "probe" {
   loadbalancer_id     = azurerm_lb.lb.id
   name                = "health-probe"

@@ -1,3 +1,5 @@
+# File: modules/loadbalancer-n01669400/variables.tf
+
 variable "resource_group_name" {
   type        = string
   description = "The name of the resource group."

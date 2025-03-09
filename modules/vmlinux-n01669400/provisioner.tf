@@ -1,5 +1,7 @@
+# Filename: modules/vmlinux-n01669400/provisioner.tf
 
-resource "null_resource" "hostname_display" {
+# Define a null_resource to display the hostname of the Linux VM
+resource "null_resource" "display_hostname" {
   depends_on = [azurerm_linux_virtual_machine.linux-vm]
 
   connection {

@@ -1,3 +1,6 @@
+# File: modules/datadisk-n01669400/main.tf
+
+# Linux VMs - Multiple data disks
 resource "azurerm_managed_disk" "disks" {
   for_each = tomap({ for idx, val in var.linux_vm_ids : idx => val })
 
@@ -10,6 +13,7 @@ resource "azurerm_managed_disk" "disks" {
   tags                 = var.tags
 }
 
+# Attach the managed disks to the Linux VMs
 resource "azurerm_virtual_machine_data_disk_attachment" "linux_disks" {
   for_each           = tomap({ for idx, val in var.linux_vm_ids : idx => val })
   managed_disk_id    = azurerm_managed_disk.disks[each.key].id
@@ -29,6 +33,7 @@ resource "azurerm_managed_disk" "windows_disk" {
   tags                 = var.tags
 }
 
+# Attach the managed disk to the Windows VM
 resource "azurerm_virtual_machine_data_disk_attachment" "windows_disk" {
   managed_disk_id    = azurerm_managed_disk.windows_disk.id
   virtual_machine_id = var.windows_vm_id

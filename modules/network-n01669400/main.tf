@@ -1,3 +1,6 @@
+# File: modules/network-n01669400/main.tf
+
+# Create a virtual network
 resource "azurerm_virtual_network" "vnet" {
   name                = var.virtual_network_name
   resource_group_name = var.resource_group_name
@@ -6,6 +9,7 @@ resource "azurerm_virtual_network" "vnet" {
   tags                = var.tags
 }
 
+# Create a subnet
 resource "azurerm_subnet" "subnet" {
   name                 = var.subnet_name
   resource_group_name  = var.resource_group_name
@@ -13,6 +17,8 @@ resource "azurerm_subnet" "subnet" {
   address_prefixes     = ["10.0.1.0/24"]
 }
 
+# Create a network security group and define inbound rules
+# for SSH, RDP, WinRM, and HTTP
 resource "azurerm_network_security_group" "nsg" {
   name                = "${var.virtual_network_name}-nsg"
   location            = var.location
@@ -67,6 +73,7 @@ resource "azurerm_network_security_group" "nsg" {
   tags = var.tags
 }
 
+# Associate the network security group with the subnet
 resource "azurerm_subnet_network_security_group_association" "nsg_assoc" {
   subnet_id                 = azurerm_subnet.subnet.id
   network_security_group_id = azurerm_network_security_group.nsg.id

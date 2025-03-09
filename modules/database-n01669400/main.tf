@@ -1,4 +1,6 @@
-# File: modules/database-HumberID/main.tf
+# File: modules/database-n01669400/main.tf
+
+# Define the Azure PostgreSQL Database Server
 
 resource "azurerm_postgresql_server" "db" {
   name                = "${lower(replace(var.prefix, "-", ""))}psql"
@@ -20,6 +22,7 @@ resource "azurerm_postgresql_server" "db" {
   tags = var.tags
 }
 
+# Define the Azure PostgreSQL Database
 resource "azurerm_postgresql_database" "db" {
   name                = "project-db"
   resource_group_name = var.resource_group_name

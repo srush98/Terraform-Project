@@ -6,7 +6,7 @@ output "Resource-Group" {
 }
 
 # Output the name of the virtual network
-output "Virtual-network" {
+output "Virtual-Network" {
   value = module.network-n01669400.virtual_network_name
 }
 
@@ -26,7 +26,7 @@ output "Recovery_services_vault" {
 }
 
 # Output the name of the storage account
-output "Storage_account" {
+output "Storage_Account" {
   value = module.common-n01669400.storage_account_name
 }
 
