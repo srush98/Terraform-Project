@@ -1,7 +1,7 @@
 variable "resource_group_name" {
   type        = string
   description = "The name of the resource group."
-  default     = "n01669400-RG"
+  default     = "9400-RG"
 }
 
 variable "location" {
@@ -21,23 +21,20 @@ variable "tags" {
   }
 }
 
-variable "prefix" {
-  type    = string
-  default = "n01669400"
-}
-
-variable "storage_account_type" {
+variable "log_analytics_workspace_name" {
   type        = string
-  default     = "Standard_LRS"
-  description = "Type of storage account to use"
+  description = "The name of the log analytics workspace."
+  default     = "9400-LogAnalyticsWorkspace"
 }
 
-variable "linux_vm_ids" {
-  type        = list(string)
-  description = "IDs of the Linux VMs"
-}
-
-variable "windows_vm_id" {
+variable "recovery_services_vault_name" {
   type        = string
-  description = "ID of the Windows VM"
+  description = "The name of the recovery services vault."
+  default     = "n01669400-RecoveryServicesVault"
+}
+
+variable "storage_account_name" {
+  type        = string
+  description = "The name of the storage account."
+  default     = "n01669400storageaaccount"
 }

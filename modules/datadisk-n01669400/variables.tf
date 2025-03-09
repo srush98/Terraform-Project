@@ -26,12 +26,18 @@ variable "prefix" {
   default = "n01669400"
 }
 
+variable "storage_account_type" {
+  type        = string
+  default     = "Standard_LRS"
+  description = "Type of storage account to use"
+}
+
 variable "linux_vm_ids" {
   type        = list(string)
   description = "IDs of the Linux VMs"
 }
 
-variable "linux_nic_ids" {
-  description = "List of Linux VM network interface IDs"
-  type        = list(string)
+variable "windows_vm_id" {
+  type        = string
+  description = "ID of the Windows VM"
 }

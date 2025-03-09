@@ -1,7 +1,7 @@
 variable "resource_group_name" {
   type        = string
   description = "The name of the resource group."
-  default     = "n01669400-RG"
+  default     = "9400-RG"
 }
 
 variable "location" {
@@ -23,7 +23,7 @@ variable "tags" {
 
 variable "prefix" {
   type    = string
-  default = "n01669400"
+  default = "n9400"
 }
 
 variable "subnet_id" {

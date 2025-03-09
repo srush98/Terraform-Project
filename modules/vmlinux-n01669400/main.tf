@@ -70,6 +70,6 @@ resource "azurerm_linux_virtual_machine" "linux-vm" {
   boot_diagnostics {
     storage_account_uri = "https://${var.storage_account_name}.blob.core.windows.net/"
   }
-  
+
   tags = var.tags
 }

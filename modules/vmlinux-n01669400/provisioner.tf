@@ -1,6 +1,6 @@
 
 resource "null_resource" "hostname_display" {
-   depends_on = [azurerm_linux_virtual_machine.linux-vm]
+  depends_on = [azurerm_linux_virtual_machine.linux-vm]
 
   connection {
     type        = "ssh"
@@ -10,6 +10,8 @@ resource "null_resource" "hostname_display" {
   }
 
   provisioner "remote-exec" {
-    inline = ["echo $(hostname)"]
+    inline = [
+      "echo 'VM hostname: $(hostname)'"
+    ]
   }
 }

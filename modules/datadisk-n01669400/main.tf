@@ -1,5 +1,5 @@
 resource "azurerm_managed_disk" "disks" {
-  for_each             = tomap({ for idx, val in var.linux_vm_ids : idx => val })
+  for_each = tomap({ for idx, val in var.linux_vm_ids : idx => val })
 
   name                 = "${var.prefix}-DATADISK-${each.key}"
   resource_group_name  = var.resource_group_name

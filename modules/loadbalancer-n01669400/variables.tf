@@ -1,7 +1,7 @@
 variable "resource_group_name" {
   type        = string
   description = "The name of the resource group."
-  default     = "n01669400-RG"
+  default     = "9400-RG"
 }
 
 variable "location" {
@@ -20,23 +20,18 @@ variable "tags" {
     Environment    = "Learning"
   }
 }
+
 variable "prefix" {
   type    = string
-  default = "n01669400"
+  default = "9400"
 }
 
-variable "subnet_id" {
-  description = "The ID of the subnet where the Linux VMs will be deployed."
-  type        = string
+variable "linux_vm_ids" {
+  type        = list(string)
+  description = "IDs of the Linux VMs"
 }
 
-variable "storage_account_name" {
-  description = "The name of the storage account for boot diagnostics"
-  type        = string
-}
-
-variable "storage_account_key" {
-  type        = string
-  sensitive   = true
-  description = "Primary access key of the storage account for boot diagnostics"
+variable "linux_nic_ids" {
+  description = "List of Linux VM network interface IDs"
+  type        = list(string)
 }

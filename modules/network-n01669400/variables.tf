@@ -1,7 +1,7 @@
 variable "resource_group_name" {
   type        = string
   description = "The name of the resource group."
-  default     = "n01669400-RG"
+  default     = "9400-RG"
 }
 
 variable "location" {
@@ -24,11 +24,11 @@ variable "tags" {
 variable "virtual_network_name" {
   type        = string
   description = "The name of the virtual network."
-  default     = "n01669400-VNET"
+  default     = "9400-VNET"
 }
 
 variable "subnet_name" {
   type        = string
   description = "The name of the subnet."
-  default     = "n01669400-SUBNET"
+  default     = "9400-SUBNET"
 }
