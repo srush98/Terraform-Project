@@ -43,7 +43,14 @@ module "datadisk-n01669400" {
   windows_vm_id       = module.vmwindows-n01669400.vm_id
 }
 
-
+# Define the Azure Load Balancer
+module "loadbalancer-n01669400" {
+  source              = "./modules/loadbalancer-n01669400"
+  resource_group_name = module.rgroup-n01669400.resource_group_name
+  # subnet_id           = module.network-n01669400.subnet_id
+  linux_vm_ids  = module.vmlinux-n01669400.vm_ids
+  linux_nic_ids = module.vmlinux-n01669400.linux_nic_ids
+}
 
 # Define the Azure Database
 module "database-n01669400" {
