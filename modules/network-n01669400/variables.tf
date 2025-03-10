@@ -19,11 +19,9 @@ variable "tags" {
 variable "virtual_network_name" {
   type        = string
   description = "The name of the virtual network."
-  default     = "n9400-VNET"
 }
 
 variable "subnet_name" {
   type        = string
   description = "The name of the subnet."
-  default     = "n9400-SUBNET"
 }

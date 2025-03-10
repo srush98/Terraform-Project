@@ -16,8 +16,7 @@ variable "tags" {
 }
 
 variable "prefix" {
-  type    = string
-  default = "n01669400"
+  type = string
 }
 
 variable "db_password" {

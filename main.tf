@@ -19,18 +19,23 @@ module "rgroup-n01669400" {
 
 # Define the Network
 module "network-n01669400" {
-  source              = "./modules/network-n01669400"
-  resource_group_name = var.resource_group_name
-  location            = var.location
-  tags                = local.common_tags
+  source               = "./modules/network-n01669400"
+  resource_group_name  = module.rgroup-n01669400.resource_group_name
+  location             = var.location
+  virtual_network_name = "n9400-VNET"
+  subnet_name          = "n9400-SUBNET"
+  tags                 = local.common_tags
 }
 
 # Define the Azure Storage Account
 module "common-n01669400" {
-  source              = "./modules/common-n01669400"
-  resource_group_name = var.resource_group_name
-  location            = var.location
-  tags                = local.common_tags
+  source                       = "./modules/common-n01669400"
+  resource_group_name          = var.resource_group_name
+  location                     = var.location
+  log_analytics_workspace_name = "n9400-LogAnalyticsWorkspace"
+  recovery_services_vault_name = "n9400-RecoveryServicesVault"
+  storage_account_name         = "n9400storageaccount"
+  tags                         = local.common_tags
 }
 
 # Define the Azure Linux Virtual Machine
@@ -38,10 +43,10 @@ module "vmlinux-n01669400" {
   source               = "./modules/vmlinux-n01669400"
   resource_group_name  = var.resource_group_name
   location             = var.location
+  prefix               = var.prefix
   storage_account_name = module.common-n01669400.storage_account_name
   storage_account_key  = module.common-n01669400.storage_account_primary_access_key
   subnet_id            = module.network-n01669400.subnet_id
-  prefix               = var.prefix
   tags                 = local.common_tags
 }
 
@@ -50,10 +55,10 @@ module "vmwindows-n01669400" {
   source               = "./modules/vmwindows-n01669400"
   resource_group_name  = var.resource_group_name
   location             = var.location
+  prefix               = var.prefix
   subnet_id            = module.network-n01669400.subnet_id
   storage_account_name = module.common-n01669400.storage_account_name
   storage_account_key  = module.common-n01669400.storage_account_primary_access_key
-  prefix               = var.prefix
   tags                 = local.common_tags
 }
 
@@ -84,6 +89,7 @@ module "database-n01669400" {
   source              = "./modules/database-n01669400"
   resource_group_name = var.resource_group_name
   location            = var.location
+  prefix              = var.prefix
   db_password         = "YourSecurePassword123!"
   tags                = local.common_tags
 }

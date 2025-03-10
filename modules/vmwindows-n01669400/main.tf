@@ -2,7 +2,7 @@
 
 # Define the Azure Availability Set for Windows VMs
 resource "azurerm_availability_set" "windows" {
-  name                         = "${var.prefix}-AVSET-WINDOWS"
+  name                         = "${var.prefix}-AVSET-Windows"
   resource_group_name          = var.resource_group_name
   location                     = var.location
   platform_fault_domain_count  = 2
@@ -15,7 +15,7 @@ resource "azurerm_availability_set" "windows" {
 # Define the Azure Public IP Address for Windows VMs
 resource "azurerm_public_ip" "win-pip" {
   count               = var.vm_win_count
-  name                = "${var.prefix}-PIP-WINDOWS-${count.index}"
+  name                = "${var.prefix}-PIP-Windows-${count.index}"
   resource_group_name = var.resource_group_name
   location            = var.location
   allocation_method   = "Dynamic"
@@ -27,7 +27,7 @@ resource "azurerm_public_ip" "win-pip" {
 # Define the Azure Network Interface for Windows VMs
 resource "azurerm_network_interface" "win-nic" {
   count               = var.vm_win_count
-  name                = "${var.prefix}-NIC-WINDOWS-${count.index}"
+  name                = "${var.prefix}-NIC-Windows-${count.index}"
   resource_group_name = var.resource_group_name
   location            = var.location
 
@@ -44,7 +44,7 @@ resource "azurerm_network_interface" "win-nic" {
 # Define the Azure Windows Virtual Machine
 resource "azurerm_windows_virtual_machine" "win-vm" {
   count               = var.vm_win_count
-  name                = "${var.prefix}-WVM-${count.index}"
+  name                = "${var.prefix}-VM-Win-${count.index}"
   resource_group_name = var.resource_group_name
   location            = var.location
   availability_set_id = azurerm_availability_set.windows.id

@@ -17,17 +17,17 @@ variable "tags" {
 variable "log_analytics_workspace_name" {
   type        = string
   description = "The name of the log analytics workspace."
-  default     = "n9400-LogAnalyticsWorkspace"
+  # default     = "n9400-LogAnalyticsWorkspace"
 }
 
 variable "recovery_services_vault_name" {
   type        = string
   description = "The name of the recovery services vault."
-  default     = "n9400-RecoveryServicesVault"
+  # default     = "n9400-RecoveryServicesVault"
 }
 
 variable "storage_account_name" {
   type        = string
   description = "The name of the storage account."
-  default     = "n9400storageaaccount"
+  # default     = "n9400storageaaccount"
 }

@@ -3,7 +3,7 @@
 variable "resource_group_name" {
   type        = string
   description = "The name of the resource group."
-  default     = "n9400-ResourceGroup"
+  default     = "n9400-RG"
 }
 
 variable "location" {

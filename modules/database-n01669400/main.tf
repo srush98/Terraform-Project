@@ -3,12 +3,10 @@
 # Define the Azure PostgreSQL Database Server
 
 resource "azurerm_postgresql_server" "db" {
-  name                = "${lower(replace(var.prefix, "-", ""))}psql"
-  resource_group_name = var.resource_group_name
-  location            = var.location
-
-  sku_name = "B_Gen5_1"
-
+  name                         = "${lower(replace(var.prefix, "-", ""))}psql"
+  resource_group_name          = var.resource_group_name
+  location                     = var.location
+  sku_name                     = "B_Gen5_1"
   storage_mb                   = 5120
   backup_retention_days        = 7
   geo_redundant_backup_enabled = false

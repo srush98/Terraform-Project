@@ -2,9 +2,12 @@
 
 # Define a null_resource to display the hostname of the Linux VM
 resource "null_resource" "display_hostname" {
-  depends_on = [azurerm_linux_virtual_machine.linux-vm]
+  depends_on = [
+    azurerm_linux_virtual_machine.linux-vm,
+    azurerm_public_ip.linux-pip
+  ]
 
-  for_each = azurerm_linux_virtual_machine.linux-vm
+  for_each = toset([for i in range(var.vm_linux_count) : tostring(i)])
 
   connection {
     type        = "ssh"

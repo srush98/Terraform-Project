@@ -2,7 +2,7 @@
 
 # Define the Azure Availability Set for Linux VMs
 resource "azurerm_availability_set" "linux" {
-  name                         = "${var.prefix}-AVSET-LINUX"
+  name                         = "${var.prefix}-AVSET-Linux"
   resource_group_name          = var.resource_group_name
   location                     = var.location
   platform_fault_domain_count  = 2
@@ -14,18 +14,18 @@ resource "azurerm_availability_set" "linux" {
 # Define the Azure Public IP Address for Linux VMs
 resource "azurerm_public_ip" "linux-pip" {
   for_each            = toset([for i in range(var.vm_linux_count) : tostring(i)])
-  name                = "${var.prefix}-PIP-LINUX-${each.key}"
+  name                = "${var.prefix}-PIP-Linux-${each.key}"
   resource_group_name = var.resource_group_name
   location            = var.location
   allocation_method   = "Dynamic"
-  domain_name_label   = "${var.prefix}-linux${each.key}"
+  domain_name_label   = "${var.prefix}-linux-${each.key}"
   tags                = var.tags
 }
 
 # Define the Azure Network Interface for Linux VMs
 resource "azurerm_network_interface" "linux-nic" {
   for_each            = toset([for i in range(var.vm_linux_count) : tostring(i)])
-  name                = "${var.prefix}-NIC-LINUX-${each.key}"
+  name                = "${var.prefix}-NIC-Linux-${each.key}"
   resource_group_name = var.resource_group_name
   location            = var.location
 
@@ -41,7 +41,7 @@ resource "azurerm_network_interface" "linux-nic" {
 # Define the Azure Linux Virtual Machine
 resource "azurerm_linux_virtual_machine" "linux-vm" {
   for_each                        = toset([for i in range(var.vm_linux_count) : tostring(i)])
-  name                            = "${var.prefix}-VM-LINUX-${each.key}"
+  name                            = "${var.prefix}-VM-Linux-${each.key}"
   resource_group_name             = var.resource_group_name
   location                        = var.location
   availability_set_id             = azurerm_availability_set.linux.id
