@@ -5,7 +5,8 @@ resource "null_resource" "display_hostname" {
   for_each = toset([for i in range(var.vm_linux_count) : tostring(i)])
 
   depends_on = [
-    azurerm_linux_virtual_machine.linux-vm
+    azurerm_linux_virtual_machine.linux-vm,
+    azurerm_public_ip.linux-pip
   ]
 
   connection {

@@ -92,24 +92,4 @@ resource "azurerm_virtual_machine_extension" "linux_azure_monitor" {
   type                       = "AzureMonitorLinuxAgent"
   type_handler_version       = "1.0"
   auto_upgrade_minor_version = true
-
-  settings = <<SETTINGSJSON
-  {
-    "ladCfg" : {
-      "diagnosticMonitorConfiguration" : {
-        "performanceCounters" : {
-          "sinks" : "",
-          "sampleRateInSeconds" : 15,
-          "counterSpecifiers" : [
-            "/builtin/cpu/%% Idle Time",
-            "/builtin/memory/%% Committed Bytes In Use",
-            "/builtin/network/Bytes Sent/sec",
-            "/builtin/network/Bytes Received/sec",
-            "/builtin/disk/%% Disk Time"
-          ]
-        }
-      }
-    }
-  }
-  SETTINGSJSON
 }
