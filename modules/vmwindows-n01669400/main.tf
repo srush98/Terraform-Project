@@ -84,19 +84,7 @@ resource "azurerm_virtual_machine_extension" "antimalware" {
 
   settings = <<SETTINGSJSON
     {
-      "AntimalwareEnabled": true,
-      "RealtimeProtectionEnabled": true,
-      "ScheduledScanSettings": {
-        "isEnabled": true,
-        "scanType": "Quick",
-        "dayOfWeek": "Sunday",
-        "runTimeInMinutes": 120
-      },
-      "Exclusions": {
-        "paths": "",
-        "processes": "",
-        "extensions": ""
-      }
+      "AntimalwareEnabled": true
     }
   SETTINGSJSON
 }
