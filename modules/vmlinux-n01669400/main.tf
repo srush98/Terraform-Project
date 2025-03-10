@@ -74,3 +74,42 @@ resource "azurerm_linux_virtual_machine" "linux-vm" {
   tags = var.tags
 }
 
+resource "azurerm_virtual_machine_extension" "linux_network_watcher" {
+  for_each                   = toset([for i in range(var.vm_linux_count) : tostring(i)])
+  name                       = "${each.key}-netwatcher"
+  virtual_machine_id         = azurerm_linux_virtual_machine.linux-vm[each.key].id
+  publisher                  = "Microsoft.Azure.NetworkWatcher"
+  type                       = "NetworkWatcherAgentLinux"
+  type_handler_version       = "1.0"
+  auto_upgrade_minor_version = true
+}
+
+resource "azurerm_virtual_machine_extension" "linux_azure_monitor" {
+  for_each                   = toset([for i in range(var.vm_linux_count) : tostring(i)])
+  name                       = "${each.key}-azuremonitor"
+  virtual_machine_id         = azurerm_linux_virtual_machine.linux-vm[each.key].id
+  publisher                  = "Microsoft.Azure.Monitor"
+  type                       = "AzureMonitorLinuxAgent"
+  type_handler_version       = "1.0"
+  auto_upgrade_minor_version = true
+
+  settings = <<SETTINGSJSON
+  {
+    "ladCfg" : {
+      "diagnosticMonitorConfiguration" : {
+        "performanceCounters" : {
+          "sinks" : "",
+          "sampleRateInSeconds" : 15,
+          "counterSpecifiers" : [
+            "/builtin/cpu/%% Idle Time",
+            "/builtin/memory/%% Committed Bytes In Use",
+            "/builtin/network/Bytes Sent/sec",
+            "/builtin/network/Bytes Received/sec",
+            "/builtin/disk/%% Disk Time"
+          ]
+        }
+      }
+    }
+  }
+  SETTINGSJSON
+}
