@@ -11,7 +11,7 @@ resource "null_resource" "display_hostname" {
 
   connection {
     type        = "ssh"
-    host        = azurerm_public_ip.linux-pip[each.key].ip_address
+    host        = azurerm_public_ip.linux-pip[each.key].fqdn
     user        = "adminuser"
     private_key = file("~/.ssh/id_rsa")
   }
