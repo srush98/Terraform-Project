@@ -52,6 +52,7 @@ This project involves provisioning a highly available, scalable, and secure infr
 │   │   ├── outputs.tf
 │── 📄 .gitignore
 │── 📄 providers.tf
+│── 📄 variables.tf
 │── 📄 backend.tf
 │── 📄 main.tf
 │── 📄 outputs.tf
