@@ -155,6 +155,6 @@ Upon successful deployment, Terraform will print:
 - **State Issues:** If `terraform refresh` shows an empty state, manually check and delete existing resources in Azure.
 - **Authentication Errors:** Run `az login` and ensure the correct subscription is selected using `az account set --subscription <subscription-id>`.
 - **Deployment Failures:** Review logs using `terraform plan` and `terraform apply -auto-approve` for error messages.
-- **Error loading state Error:** Run this command `az storage account keys list --account-name tfstateaccount9400 --resource-group tfstate-rg-9400 --query "[0].value" --output tsv` and then export the key using this command `export ARM_ACCESS_KEY="gAlBFjXaMFd42uxT0w49wFUaZeyoCY1wDTfl1EuYsNUsIachWveIvfslg2eCoYrwe3+CHIbwd2IC+ASt/VZeAg=="`
+- **Error loading state Error:** Run this command `az storage account keys list --account-name tfstateaccount9400 --resource-group tfstate-rg-9400 --query "[0].value" --output tsv` and then export the key using this command `export ARM_ACCESS_KEY="<<Accesskey>>`
 
 ---
