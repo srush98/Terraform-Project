@@ -18,7 +18,8 @@ resource "azurerm_public_ip" "win-pip" {
   name                = "${var.prefix}-PIP-Windows-${count.index}"
   resource_group_name = var.resource_group_name
   location            = var.location
-  allocation_method   = "Dynamic"
+  allocation_method   = "Static"
+  sku                 = "Standard"
   domain_name_label   = "${var.prefix}-win-${count.index}"
 
   tags = var.tags

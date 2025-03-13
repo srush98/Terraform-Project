@@ -17,7 +17,8 @@ resource "azurerm_public_ip" "linux-pip" {
   name                = "${var.prefix}-PIP-Linux-${each.key}"
   resource_group_name = var.resource_group_name
   location            = var.location
-  allocation_method   = "Dynamic"
+  allocation_method   = "Static"
+  sku                 = "Standard"
   domain_name_label   = "${var.prefix}-linux-${each.key}"
   tags                = var.tags
 }
