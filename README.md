@@ -15,7 +15,7 @@ This project involves provisioning a highly available, scalable, and secure infr
 ## **Project Structure**
 
 ```
-📁 terraform-assignment
+📁 terraform-project
 │── 📂 modules
 │   ├── 📂 rgroup-n01669400
 │   │   ├── main.tf
@@ -82,15 +82,18 @@ cd assignment1-n01669400
 az login
 ```
 
-### **3. Initialize Terraform**
+### **3. Create a storage account, container, and export key**
+
+```bash
+az storage account create --name tfstateaccount9400 --resource-group <your-resource-group> --sku Standard_LRS --location "Canada Central"
+az storage container create --name tfstate --account-name tfstateaccount9400
+export ARM_ACCESS_KEY=$(az storage account keys list --account-name tfstateaccount9400 --query '[0].value' --output tsv)
+```
+
+### **4. Initialize and Validate Configuration**
 
 ```bash
 terraform init
-```
-
-### **4. Validate Configuration**
-
-```bash
 terraform validate
 ```
 
