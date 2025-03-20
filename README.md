@@ -1,8 +1,8 @@
-# CCGC 5502 - Automation with Terraform Assignment
+# Automation with Terraform
 
 ## **Overview**
 
-This project involves provisioning a highly available, scalable, and secure infrastructure in Azure using Terraform. It includes various Azure resources such as virtual networks, virtual machines, load balancers, databases, and storage accounts. The infrastructure must be deployed non-interactively and managed using Terraform modules.
+The objective of this project is to codify and provision infrastructure in **Microsoft Azure**, ensuring **high availability, scalability, and security**. The project is implemented using **Terraform** to define and deploy various Azure resources via Infrastructure as Code (IaC).
 
 ## **Prerequisites**
 
@@ -67,13 +67,65 @@ This project involves provisioning a highly available, scalable, and secure infr
 - **Provisioners:** Displayed hostnames of provisioned VMs.
 - **Scalability:** Used `for_each` for Linux VMs and `count` for Windows VMs.
 
+### **Root Module Configuration**
+
+- Defined child modules in **Terraform-Project** root module.
+- Configured **outputs.tf** to print key infrastructure details.
+
+### **Child Module Development**
+
+#### **Resource Group Module**
+
+- Created a **rgroup** module to provision **HumberID-RG**.
+
+#### **Networking Module**
+
+- Created a **network** module to provision:
+  - Virtual Network (**HumberID-VNET**)
+  - Subnet (**HumberID-SUBNET**)
+  - **NSG with inbound rules** for **ports 22, 3389, 5985, and 80**.
+
+#### **Common Services Module**
+
+- Created a **common_services** module to provision:
+  - **Log Analytics Workspace**
+  - **Recovery Services Vault**
+  - **Storage Account (LRS Redundancy)**
+
+#### **Linux VMs Module**
+
+- Created a **vmlinux** module to provision **3 CentOS VMs**.
+- Used **for_each** for scalability.
+- Implemented **remote-exec** provisioner to display hostnames.
+- Installed **Azure Monitor and Network Watcher extensions**.
+
+#### **Windows VM Module**
+
+- Created a **vmwindows** module to provision **1 Windows Server 2016 VM**.
+- Used **count** for scalability.
+- Installed **Antimalware extension**.
+
+#### **Data Disks Module**
+
+- Created a **datadisk** module to provision **4 x 10GB managed disks**.
+- Attached disks to **all 4 VMs**.
+
+#### **Load Balancer Module**
+
+- Created a **loadbalancer** module to provision a **public-facing Basic Load Balancer**.
+- Assigned **all 3 Linux VMs as backend pool** members.
+
+#### **Database Module**
+
+- Created a **database** module to provision **Azure Database for PostgreSQL Single Server**.
+
 ## **Deployment Steps**
 
 ### **1. Clone the Repository**
 
 ```bash
-git clone https://github.com/srush98/assignment1-n01669400.git
-cd assignment1-n01669400
+git clone https://github.com/srush98/Terraform-Project.git
+cd Terraform-Project
 ```
 
 ### **2. Authenticate with Azure**
@@ -85,8 +137,10 @@ az login
 ### **3. Create a storage account, container, and export key**
 
 ```bash
-az storage account create --name tfstateaccount9400 --resource-group <your-resource-group> --sku Standard_LRS --location "Canada Central"
+az storage account create --name tfstateaccount9400 --resource-group tfstate-rg-9400 --sku Standard_LRS --location "Canada Central"
+
 az storage container create --name tfstate --account-name tfstateaccount9400
+
 export ARM_ACCESS_KEY=$(az storage account keys list --account-name tfstateaccount9400 --query '[0].value' --output tsv)
 ```
 
@@ -103,7 +157,7 @@ terraform validate
 terraform plan
 ```
 
-### **6. Apply Configuration (Non-Interactive)**
+### **6. Apply Configuration**
 
 ```bash
 terraform apply --auto-approve
@@ -116,7 +170,7 @@ terraform state list | nl
 terraform output
 ```
 
-### **8. Destroy Infrastructure (After Grading)**
+### **8. Destroy Infrastructure**
 
 ```bash
 terraform destroy --auto-approve
@@ -162,3 +216,90 @@ Upon successful deployment, Terraform will print:
 - **Error loading state Error:** Run this command to export the key `export ARM_ACCESS_KEY=$(az storage account keys list --account-name tfstateaccount9400 --query '[0].value' --output tsv)`
 
 ---
+
+## **Technical Skills Demonstrated**
+
+### **Terraform Skills**
+
+- Developing reusable code for provisioning Azure resources
+- Managing infrastructure resources (single & multiple instances)
+- Parameterization using input variables, locals, and output values
+- Implementing modular architecture
+- Using null provisioners
+- Configuring and utilizing a remote backend
+
+### **Azure Services & Features**
+
+- **Identity and Access Management** (Microsoft Entra ID)
+- **Networking** (Virtual networks, subnets, network security groups)
+- **Security** (NSGs, security rules)
+- **Storage** (Storage accounts, Azure Files, Blob containers)
+- **Compute** (Windows & Linux VMs, managed disks)
+- **Traffic Management** (Load balancers)
+- **Monitoring** (Azure Monitor, Log Analytics Workspace)
+- **Cost Optimization** (Efficient provisioning, VM shutdown when idle)
+- **Azure Interfaces** (Azure Portal, CLI, Terraform)
+
+---
+
+## **Execution & Testing**
+
+### **Phase I – Pre-Provisioning Validation**
+
+1. **Initialize Terraform**
+   ```bash
+   terraform init
+   ```
+2. **Validate Configuration**
+   ```bash
+   terraform validate
+   ```
+3. **Plan Deployment**
+   ```bash
+   terraform plan
+   ```
+
+### **Phase II – Provisioning**
+
+- Deploy infrastructure:
+  ```bash
+  terraform apply --auto-approve
+  ```
+
+### **Phase III – Post-Provisioning Validation**
+
+1. **Check Terraform State**
+
+   ```bash
+   terraform state list | nl
+   ```
+
+2. **Retrieve Outputs**
+   ```bash
+   terraform output
+   ```
+
+---
+
+### **Cleanup (Cost Management)**
+
+- Destroy all provisioned resources after completion:
+  ```bash
+  terraform destroy --auto-approve
+  ```
+
+---
+
+## **Conclusion**
+
+This project provided hands-on experience in **Infrastructure as Code (IaC)** using **Terraform**. It reinforced critical concepts such as **modular architecture**, **parameterization**, **remote state management**, and **Azure services provisioning**. By following best practices, I successfully deployed a **highly available, scalable, and secure** infrastructure in **Azure**.
+
+**Key Takeaways:**
+
+- Effective **modularization** improves reusability and scalability.
+- **Remote state management** ensures better team collaboration.
+- Using **for_each** and **count** improves infrastructure efficiency.
+- **Terraform validation & planning** helps prevent misconfigurations.
+- Cost efficiency is crucial—**shutting down unused VMs** reduces expenses.
+
+Overall, this project strengthened my Terraform skills and provided valuable real-world cloud automation experience.
