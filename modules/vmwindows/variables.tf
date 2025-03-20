@@ -1,4 +1,4 @@
-# File: modules/vmwindows-n01669400/variables.tf
+# File: modules/vmwindows/variables.tf
 
 variable "resource_group_name" {
   type        = string

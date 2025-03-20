@@ -1,4 +1,4 @@
-# File: modules/rgroup-n01669400/main.tf
+# File: modules/rgroup/main.tf
 
 # Define the Azure Resource Group
 resource "azurerm_resource_group" "rg" {

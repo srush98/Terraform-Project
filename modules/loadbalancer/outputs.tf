@@ -1,4 +1,4 @@
-# File: modules/loadbalancer-n01669400/outputs.tf
+# File: modules/loadbalancer/outputs.tf
 
 output "lb_name" {
   value = azurerm_lb.lb.name

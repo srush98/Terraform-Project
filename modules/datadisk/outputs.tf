@@ -1,4 +1,4 @@
-# File: modules/datadisk-n01669400/outputs.tf
+# File: modules/datadisk/outputs.tf
 
 output "linux_managed_disk_names" {
   description = "The managed disk names for the Linux VMs."

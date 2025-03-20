@@ -1,4 +1,4 @@
-# File: modules/database-n01669400/outputs.tf
+# File: modules/database/outputs.tf
 
 # Output the name of the database
 output "db_name" {

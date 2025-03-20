@@ -1,4 +1,4 @@
-# File: modules/common-n01669400/outputs.tf
+# File: modules/common/outputs.tf
 
 # Output the name of the log analytics workspace
 output "log_analytics_workspace_name" {

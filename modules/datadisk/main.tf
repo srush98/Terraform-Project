@@ -1,4 +1,4 @@
-# File: modules/datadisk-n01669400/main.tf
+# File: modules/datadisk/main.tf
 
 # Linux VMs - Multiple data disks
 resource "azurerm_managed_disk" "disks" {

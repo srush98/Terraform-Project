@@ -1,4 +1,4 @@
-# File: modules/network-n01669400/main.tf
+# File: modules/network/main.tf
 
 # Create a virtual network
 resource "azurerm_virtual_network" "vnet" {

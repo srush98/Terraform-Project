@@ -1,4 +1,4 @@
-# File: modules/database-n01669400/main.tf
+# File: modules/database/main.tf
 
 # Define the Azure PostgreSQL Database Server
 

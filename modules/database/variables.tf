@@ -1,4 +1,4 @@
-# File: modules/database-n01669400/variables.tf
+# File: modules/database/variables.tf
 
 variable "resource_group_name" {
   type        = string

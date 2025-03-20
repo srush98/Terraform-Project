@@ -1,4 +1,4 @@
-# File: modules/common-n01669400/variables.tf
+# File: modules/common/variables.tf
 variable "resource_group_name" {
   type        = string
   description = "The name of the resource group."

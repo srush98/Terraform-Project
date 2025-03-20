@@ -1,4 +1,4 @@
-# File: modules/common-n01669400/main.tf
+# File: modules/common/main.tf
 
 # Define the Azure Log Analytics Workspace
 resource "azurerm_log_analytics_workspace" "workspace" {

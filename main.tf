@@ -44,8 +44,8 @@ module "vmlinux" {
   resource_group_name  = module.rgroup.resource_group_name
   location             = var.location
   prefix               = var.prefix
-  storage_account_name = module.common.storage_account_name
-  storage_account_key  = module.common.storage_account_primary_access_key
+  storage_account_name = module.common_services.storage_account_name
+  storage_account_key  = module.common_services.storage_account_primary_access_key
   subnet_id            = module.network.subnet_id
   tags                 = local.common_tags
 }
@@ -57,8 +57,8 @@ module "vmwindows" {
   location             = var.location
   prefix               = var.prefix
   subnet_id            = module.network.subnet_id
-  storage_account_name = module.common.storage_account_name
-  storage_account_key  = module.common.storage_account_primary_access_key
+  storage_account_name = module.common_services.storage_account_name
+  storage_account_key  = module.common_services.storage_account_primary_access_key
   tags                 = local.common_tags
 }
 

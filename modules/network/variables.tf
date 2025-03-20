@@ -1,4 +1,4 @@
-# File: modules/network-n01669400/variables.tf
+# File: modules/network/variables.tf
 
 # Define input variables for the network module
 variable "resource_group_name" {

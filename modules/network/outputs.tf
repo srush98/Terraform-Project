@@ -1,4 +1,4 @@
-# File: modules/network-n01669400/outputs.tf
+# File: modules/network/outputs.tf
 
 # Output the name of the virtual network
 output "virtual_network_name" {

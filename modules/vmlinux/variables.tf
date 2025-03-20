@@ -1,4 +1,4 @@
-# File: modules/vmlinux-n01669400/variables.tf
+# File: modules/vmlinux/variables.tf
 
 variable "resource_group_name" {
   type        = string

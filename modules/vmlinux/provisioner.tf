@@ -1,4 +1,4 @@
-# Filename: modules/vmlinux-n01669400/provisioner.tf
+# Filename: modules/vmlinux/provisioner.tf
 
 # Define a null_resource to display the hostname of the Linux VM
 resource "null_resource" "display_hostname" {

@@ -1,4 +1,4 @@
-# File: modules/rgroup-n01669400/outputs.tf
+# File: modules/rgroup/outputs.tf
 
 # Output the name of the resource group
 output "resource_group_name" {

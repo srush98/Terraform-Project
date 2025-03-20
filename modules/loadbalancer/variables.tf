@@ -1,4 +1,4 @@
-# File: modules/loadbalancer-n01669400/variables.tf
+# File: modules/loadbalancer/variables.tf
 
 variable "resource_group_name" {
   type        = string

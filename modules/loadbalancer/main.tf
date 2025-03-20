@@ -1,4 +1,4 @@
-# File: modules/loadbalancer-n01669400/main.tf
+# File: modules/loadbalancer/main.tf
 
 # Resource block for creating an Azure Load Balancer
 resource "azurerm_lb" "lb" {

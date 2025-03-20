@@ -1,4 +1,4 @@
-# File: modules/rgroup-n01669400/variables.tf
+# File: modules/rgroup/variables.tf
 
 variable "resource_group_name" {
   type        = string
