@@ -17,36 +17,36 @@ The objective of this project is to codify and provision infrastructure in **Mic
 ```
 📁 terraform-project
 │── 📂 modules
-│   ├── 📂 rgroup-n01669400
+│   ├── 📂 rgroup
 │   │   ├── main.tf
 │   │   ├── variables.tf
 │   │   ├── outputs.tf
-│   ├── 📂 network-n01669400
+│   ├── 📂 network
 │   │   ├── main.tf
 │   │   ├── variables.tf
 │   │   ├── outputs.tf
-│   ├── 📂 common-n01669400
+│   ├── 📂 common
 │   │   ├── main.tf
 │   │   ├── variables.tf
 │   │   ├── outputs.tf
-│   ├── 📂 vmlinux-n01669400
+│   ├── 📂 vmlinux
 │   │   ├── main.tf
 │   │   ├── variables.tf
 │   │   ├── outputs.tf
 │   │   ├── provisioner.tf
-│   ├── 📂 vmwindows-n01669400
+│   ├── 📂 vmwindows
 │   │   ├── main.tf
 │   │   ├── variables.tf
 │   │   ├── outputs.tf
-│   ├── 📂 datadisk-n01669400
+│   ├── 📂 datadisk
 │   │   ├── main.tf
 │   │   ├── variables.tf
 │   │   ├── outputs.tf
-│   ├── 📂 loadbalancer-n01669400
+│   ├── 📂 loadbalancer
 │   │   ├── main.tf
 │   │   ├── variables.tf
 │   │   ├── outputs.tf
-│   ├── 📂 database-n01669400
+│   ├── 📂 database
 │   │   ├── main.tf
 │   │   ├── variables.tf
 │   │   ├── outputs.tf
