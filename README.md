@@ -2,20 +2,24 @@
 
 ## **Overview**
 
-The objective of this project is to codify and provision infrastructure in **Microsoft Azure**, ensuring **high availability, scalability, and security**. The project is implemented using **Terraform** to define and deploy various Azure resources via Infrastructure as Code (IaC).
+This project focuses on automating infrastructure and configuration management in **Microsoft Azure** using **Terraform** and **Ansible**. The goal is to ensure **high availability, scalability, and security** while maintaining efficiency through Infrastructure as Code (IaC) principles.
+
+- **Terraform** provisions cloud infrastructure.
+- **Ansible** automates post-provisioning configuration and software setup.
 
 ## **Prerequisites**
 
 - **Azure Account** (Pay-as-you-go preferred)
 - **Terraform Installed** (v1.x.x or later)
 - **Azure CLI Installed** (for authentication and resource validation)
-- **GitHub Repository** (to store the Terraform code)
+- **Ansible Installed** (on local machine or control node)
+- **GitHub Repository** (to store Terraform & Ansible code)
 - **Development Environment** (WSL, VS Code, or GitBash)
 
 ## **Project Structure**
 
 ```
-📁 terraform-project
+📁 automation-project
 │── 📂 modules
 │   ├── 📂 rgroup
 │   │   ├── main.tf
@@ -132,13 +136,52 @@ The objective of this project is to codify and provision infrastructure in **Mic
 
 - Created a **database** module to provision **Azure Database for PostgreSQL Single Server**.
 
+---
+
+## **Ansible Roles Developed**
+
+### **1. Profile Update Role (`profile-HumberID`)**
+
+- Appends a test block to `/etc/profile`
+- Sets an auto-logout timeout (`TMOUT=1500`)
+
+### **2. User & Group Management Role (`user-HumberID`)**
+
+- Creates **group**: `cloudadmins`
+- Creates **users**: `user100`, `user200`, `user300`
+- Adds users to `cloudadmins` and `wheel`
+- Generates SSH keys for each user (no passphrase)
+- Downloads the **private key** for `user100` from `VM1`
+
+### **3. Disk Configuration Role (`datadisk-HumberID`)**
+
+- Partitions the **10GB** disk:
+  - **4GB partition** → XFS, mounted at `/part1`
+  - **5GB partition** → EXT4, mounted at `/part2`
+
+### **4. Web Server Role (`webserver-HumberID`)**
+
+- Installs and configures **Apache**
+- Creates **custom index.html** with node FQDN
+- Sets file permissions (`0444`)
+- Ensures **Apache auto-starts** on reboot
+
+---
+
+## **Terraform and Ansible Integration**
+
+- **Terraform’s `null_resource` provisioner** triggers Ansible playbook execution.
+- The playbook **configures all Linux VMs** post-provisioning.
+
+---
+
 ## **Deployment Steps**
 
 ### **1. Clone the Repository**
 
 ```bash
-git clone https://github.com/srush98/Terraform-Project.git
-cd Terraform-Project
+git clone https://github.com/srush98/Automation-Project.git
+cd Automation-Project
 ```
 
 ### **2. Authenticate with Azure**
@@ -307,12 +350,11 @@ Upon successful deployment, Terraform will print:
 
 This project provided hands-on experience in **Infrastructure as Code (IaC)** using **Terraform**. It reinforced critical concepts such as **modular architecture**, **parameterization**, **remote state management**, and **Azure services provisioning**. By following best practices, I successfully deployed a **highly available, scalable, and secure** infrastructure in **Azure**.
 
-**Key Takeaways:**
+## **Key Takeaways**
 
-- Effective **modularization** improves reusability and scalability.
-- **Remote state management** ensures better team collaboration.
-- Using **for_each** and **count** improves infrastructure efficiency.
-- **Terraform validation & planning** helps prevent misconfigurations.
-- Cost efficiency is crucial—**shutting down unused VMs** reduces expenses.
+- **Terraform automates infrastructure provisioning.**
+- **Ansible configures post-provisioning settings.**
+- **Combining Terraform & Ansible ensures end-to-end automation.**
+- **Using modular design improves scalability & maintainability.**
 
-Overall, this project strengthened my Terraform skills and provided valuable real-world cloud automation experience.
+This project reinforced **Infrastructure as Code (IaC)** best practices while automating **Azure resource provisioning & Linux configuration management**. 🚀

@@ -1,7 +1,5 @@
 # Filename: modules/vmlinux/provisioner.tf
 
-# modules/vmlinux/provisioner.tf
-
 resource "null_resource" "ansible_provision" {
   for_each = toset([for i in range(var.vm_linux_count) : tostring(i)])
 
