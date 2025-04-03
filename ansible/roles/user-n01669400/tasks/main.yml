@@ -1,4 +1,5 @@
 # roles/user-HumberID/tasks/main.yml
+
 ---
 - name: Create cloudadmins group
   group:
@@ -8,32 +9,20 @@
 - name: Create users user100, user200, and user300
   user:
     name: "{{ item }}"
-    group: cloudadmins
-    shell: /bin/bash
+    group: cloudadmins, wheel
     state: present
-  with_items:
-    - user100
-    - user200
-    - user300
-
-- name: Add users to wheel group
-  user:
-    name: "{{ item }}"
-    groups: wheel
-    append: yes
-  with_items:
-    - user100
-    - user200
-    - user300
-
-- name: Generate SSH keys for users
-  user:
-    name: "{{ item }}"
     generate_ssh_key: yes
     ssh_key_bits: 2048
     ssh_key_file: "/home/{{ item }}/.ssh/id_rsa"
     ssh_key_passphrase: ""
-  with_items:
+  loop:
     - user100
     - user200
     - user300
+
+- name: Download private key from VM1 for user100
+  fetch:
+    src: "/home/user100/.ssh/id_rsa"
+    dest: "./user100_key"
+    flat: yes
+  when: inventory_hostname == 'VM1'

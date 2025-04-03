@@ -1,33 +1,66 @@
-# roles/datadisk-HumberID/tasks/main.yml
+# roles/datadisk-n01669400/tasks/main.yml
 ---
-- name: Partition the 10GB data disk
-  parted:
-    device: /dev/sdb
-    number: 1
-    size: 4GB
-    state: present
-    label: gpt
-  ignore_errors: true
 
-- name: Format and mount partition with XFS (part1)
+- name: Partition and mount data disks
+  command: "parted /dev/sd{{ item.device }} mklabel msdos"
+  loop:
+    - { device: "a" }
+    - { device: "b" }
+
+- name: Create partition 1 of 4GB
+  parted:
+    device: "/dev/sd{{ item.device }}"
+    number: 1
+    state: present
+    size: 4GB
+    part_type: primary
+  loop:
+    - { device: "a" }
+    - { device: "b" }
+
+- name: Format partition 1 with XFS
   filesystem:
     fstype: xfs
-    dev: /dev/sdb1
-    mount: /part1
+    dev: "/dev/sd{{ item.device }}1"
+  loop:
+    - { device: "a" }
+    - { device: "b" }
+
+- name: Mount partition 1 to /part1
+  mount:
+    path: /part1
+    src: "/dev/sd{{ item.device }}1"
+    fstype: xfs
     state: mounted
+  loop:
+    - { device: "a" }
+    - { device: "b" }
 
-- name: Partition the 10GB data disk (second partition)
+- name: Create partition 2 of 5GB
   parted:
-    device: /dev/sdb
+    device: "/dev/sd{{ item.device }}"
     number: 2
-    size: 5GB
     state: present
-    label: gpt
-  ignore_errors: true
+    size: 5GB
+    part_type: primary
+  loop:
+    - { device: "a" }
+    - { device: "b" }
 
-- name: Format and mount partition with EXT4 (part2)
+- name: Format partition 2 with EXT4
   filesystem:
     fstype: ext4
-    dev: /dev/sdb2
-    mount: /part2
+    dev: "/dev/sd{{ item.device }}2"
+  loop:
+    - { device: "a" }
+    - { device: "b" }
+
+- name: Mount partition 2 to /part2
+  mount:
+    path: /part2
+    src: "/dev/sd{{ item.device }}2"
+    fstype: ext4
     state: mounted
+  loop:
+    - { device: "a" }
+    - { device: "b" }

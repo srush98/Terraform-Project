@@ -5,11 +5,24 @@
     name: httpd
     state: present
 
-- name: Create index.html for VM1, VM2, VM3
+- name: Create vm1.html, vm2.html, vm3.html
+  template:
+    src: "{{ item }}.j2"
+    dest: "/home/azureuser/{{ item }}.html"
+  loop:
+    - vm1
+    - vm2
+    - vm3
+
+- name: Copy vm files to var/www/html
   copy:
-    content: "{{ inventory_hostname }}"
-    dest: "/var/www/html/index.html"
+    src: "/home/azureuser/{{ item }}.html"
+    dest: "/var/www/html/{{ item }}.html"
     mode: '0444'
+  loop:
+    - vm1
+    - vm2
+    - vm3
 
 - name: Ensure Apache is started and enabled on boot
   service:

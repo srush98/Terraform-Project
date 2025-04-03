@@ -1,6 +1,6 @@
 # roles/profile-HumberID/tasks/main.yml
 ---
-- name: Ensure profile is updated with TMOUT variable
+- name: Append lines to /etc/profile
   lineinfile:
     path: /etc/profile
     regexp: '^#Test block added by Ansible.*'
