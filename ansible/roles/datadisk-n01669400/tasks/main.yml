@@ -1,0 +1,33 @@
+# roles/datadisk-HumberID/tasks/main.yml
+---
+- name: Partition the 10GB data disk
+  parted:
+    device: /dev/sdb
+    number: 1
+    size: 4GB
+    state: present
+    label: gpt
+  ignore_errors: true
+
+- name: Format and mount partition with XFS (part1)
+  filesystem:
+    fstype: xfs
+    dev: /dev/sdb1
+    mount: /part1
+    state: mounted
+
+- name: Partition the 10GB data disk (second partition)
+  parted:
+    device: /dev/sdb
+    number: 2
+    size: 5GB
+    state: present
+    label: gpt
+  ignore_errors: true
+
+- name: Format and mount partition with EXT4 (part2)
+  filesystem:
+    fstype: ext4
+    dev: /dev/sdb2
+    mount: /part2
+    state: mounted

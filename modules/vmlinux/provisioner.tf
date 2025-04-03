@@ -1,13 +1,10 @@
 # Filename: modules/vmlinux/provisioner.tf
 
-# Define a null_resource to display the hostname of the Linux VM
-resource "null_resource" "display_hostname" {
-  for_each = toset([for i in range(var.vm_linux_count) : tostring(i)])
+# modules/vmlinux/provisioner.tf
 
-  depends_on = [
-    azurerm_linux_virtual_machine.linux-vm,
-    azurerm_public_ip.linux-pip
-  ]
+resource "null_resource" "ansible_provision" {
+  for_each = toset([for i in range(var.vm_linux_count) : tostring(i)])
+  depends_on = [azurerm_linux_virtual_machine.linux-vm]
 
   connection {
     type        = "ssh"
@@ -16,9 +13,7 @@ resource "null_resource" "display_hostname" {
     private_key = file("~/.ssh/id_rsa")
   }
 
-  provisioner "remote-exec" {
-    inline = [
-      "echo 'Provisioning completed for:' $(hostname)"
-    ]
+  provisioner "local-exec" {
+    command = "ansible-playbook -i ${azurerm_public_ip.linux-pip[each.key].fqdn}, ./ansible/n01669400-playbook.yml"
   }
 }

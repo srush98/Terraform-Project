@@ -50,6 +50,19 @@ The objective of this project is to codify and provision infrastructure in **Mic
 │   │   ├── main.tf
 │   │   ├── variables.tf
 │   │   ├── outputs.tf
+│── 📂 ansible
+│   ├── 📂 roles
+│   │   ├── profile-n01669400
+│   │   │   ├── tasks/main.yml
+│   │   ├── user-n01669400
+│   │   │   ├── tasks/main.yml
+│   │   ├── datadisk-n01669400
+│   │   │   ├── tasks/main.yml
+│   │   ├── webserver-n01669400
+│   │   │   ├── tasks/main.yml
+│   ├── inventory.ini  # Defines target VMs
+│   ├── n01669400-playbook.yml  # Main Ansible playbook
+│   ├── ansible.cfg   # Configuration file
 │── 📄 .gitignore
 │── 📄 providers.tf
 │── 📄 variables.tf

@@ -1,0 +1,15 @@
+# roles/profile-HumberID/tasks/main.yml
+---
+- name: Ensure profile is updated with TMOUT variable
+  lineinfile:
+    path: /etc/profile
+    regexp: '^#Test block added by Ansible.*'
+    line: "#Test block added by Ansible...{{ ansible_user }}"
+    state: present
+
+- name: Set TMOUT variable
+  lineinfile:
+    path: /etc/profile
+    regexp: '^export TMOUT=.*'
+    line: 'export TMOUT=1500'
+    state: present

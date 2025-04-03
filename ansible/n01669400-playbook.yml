@@ -1,0 +1,11 @@
+# HumberID-playbook.yml
+---
+- name: Apply roles to all Linux nodes
+  hosts: linux
+  become: yes
+  become_method: sudo
+  roles:
+    - profile-n01669400
+    - user-n01669400
+    - datadisk-n01669400
+    - webserver-n01669400

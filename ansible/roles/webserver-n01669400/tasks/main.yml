@@ -1,0 +1,18 @@
+# roles/webserver-HumberID/tasks/main.yml
+---
+- name: Install Apache Web Server
+  yum:
+    name: httpd
+    state: present
+
+- name: Create index.html for VM1, VM2, VM3
+  copy:
+    content: "{{ inventory_hostname }}"
+    dest: "/var/www/html/index.html"
+    mode: '0444'
+
+- name: Ensure Apache is started and enabled on boot
+  service:
+    name: httpd
+    state: started
+    enabled: yes
