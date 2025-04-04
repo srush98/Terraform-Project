@@ -46,7 +46,7 @@ resource "azurerm_linux_virtual_machine" "linux-vm" {
   resource_group_name             = var.resource_group_name
   location                        = var.location
   availability_set_id             = azurerm_availability_set.linux.id
-  size                            = "Standard_B1ms"
+  size                            = var.vm_linux_size
   admin_username                  = "adminuser"
   disable_password_authentication = true
   admin_ssh_key {
@@ -62,10 +62,10 @@ resource "azurerm_linux_virtual_machine" "linux-vm" {
   }
 
   source_image_reference {
-    publisher = "OpenLogic"
-    offer     = "CentOS"
-    sku       = "8_2"
-    version   = "latest"
+    publisher = var.linux_image["publisher"]
+    offer     = var.linux_image["offer"]
+    sku       = var.linux_image["sku"]
+    version   = var.linux_image["version"]
   }
 
   boot_diagnostics {

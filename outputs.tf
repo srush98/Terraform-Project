@@ -52,16 +52,6 @@ output "Windows_VM_info" {
   }
 }
 
-output "Linux-Disks" {
-  description = "The managed disk names for the Linux VMs."
-  value       = module.datadisk.linux_managed_disk_names
-}
-
-output "Windows-Disk" {
-  description = "The managed disk name for the Windows VM."
-  value       = module.datadisk.windows_managed_disk_name
-}
-
 # Output the name of the load balancer
 output "Loadbalancer-Name" {
   value = module.loadbalancer.lb_name

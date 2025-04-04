@@ -25,6 +25,12 @@ variable "vm_linux_count" {
   default     = 3
 }
 
+variable "vm_linux_size" {
+  type        = string
+  description = "The size of the Linux virtual machine."
+  default     = "Standard_B1ms"
+}
+
 variable "subnet_id" {
   description = "The ID of the subnet where the Linux VMs will be deployed."
   type        = string
@@ -39,4 +45,15 @@ variable "storage_account_key" {
   type        = string
   sensitive   = true
   description = "Primary access key of the storage account for boot diagnostics"
+}
+
+variable "linux_image" {
+  type        = map(string)
+  description = "Linux OS image details"
+  default = {
+    publisher = "OpenLogic"
+    offer     = "CentOS"
+    sku       = "8_2"
+    version   = "latest"
+  }
 }

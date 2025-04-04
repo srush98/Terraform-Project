@@ -44,9 +44,10 @@ module "vmlinux" {
   resource_group_name  = module.rgroup.resource_group_name
   location             = var.location
   prefix               = var.prefix
+  subnet_id            = module.network.subnet_id
   storage_account_name = module.common_services.storage_account_name
   storage_account_key  = module.common_services.storage_account_primary_access_key
-  subnet_id            = module.network.subnet_id
+  vm_linux_size        = var.vm_linux_size
   tags                 = local.common_tags
 }
 
@@ -59,6 +60,7 @@ module "vmwindows" {
   subnet_id            = module.network.subnet_id
   storage_account_name = module.common_services.storage_account_name
   storage_account_key  = module.common_services.storage_account_primary_access_key
+  vm_win_size          = var.vm_win_size
   tags                 = local.common_tags
 }
 
@@ -90,6 +92,6 @@ module "database" {
   resource_group_name = module.rgroup.resource_group_name
   location            = var.location
   prefix              = var.prefix
-  db_password         = "YourSecurePassword123!"
+  db_password         = var.db_password
   tags                = local.common_tags
 }

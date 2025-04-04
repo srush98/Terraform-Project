@@ -51,7 +51,7 @@ variable "vm_win_count" {
 }
 
 # Define the size of the Windows VM
-variable "vm_size" {
+variable "vm_win_size" {
   type        = string
   description = "Size of the Windows VMs"
   default     = "Standard_B1ms"
@@ -61,4 +61,15 @@ variable "storage_type" {
   type        = string
   description = "Storage type for OS disk"
   default     = "Standard_LRS"
+}
+
+variable "windows_image" {
+  type        = map(string)
+  description = "Windows OS image details"
+  default = {
+    publisher = "MicrosoftWindowsServer"
+    offer     = "WindowsServer"
+    sku       = "2016-Datacenter"
+    version   = "latest"
+  }
 }

@@ -2,27 +2,29 @@
 # tasks file for roles/datadisk-n01669400
 - name: Create 4GB partition
   parted:
-    device: /dev/sdb
+    device: /dev/sdc
     number: 1
     state: present
+    part_start: 0%
     part_end: 4GB
 
 - name: Create 5GB partition
   parted:
-    device: /dev/sdb
+    device: /dev/sdc
     number: 2
     state: present
-    part_end: 9GB
+    part_start: 4GB
+    part_end: 100%
 
 - name: Format first partition as XFS
   filesystem:
     fstype: xfs
-    dev: /dev/sdb1
+    dev: /dev/sdc1
 
 - name: Format second partition as EXT4
   filesystem:
     fstype: ext4
-    dev: /dev/sdb2
+    dev: /dev/sdc2
 
 - name: Mount partitions persistently
   mount:
@@ -31,5 +33,5 @@
     fstype: "{{ item.fstype }}"
     state: mounted
   loop:
-    - { mount: "/part1", device: "/dev/sdb1", fstype: "xfs" }
-    - { mount: "/part2", device: "/dev/sdb2", fstype: "ext4" }
+    - { mount: "/part1", device: "/dev/sdc1", fstype: "xfs" }
+    - { mount: "/part2", device: "/dev/sdc2", fstype: "ext4" }

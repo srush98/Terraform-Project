@@ -49,7 +49,7 @@ resource "azurerm_windows_virtual_machine" "win-vm" {
   resource_group_name = var.resource_group_name
   location            = var.location
   availability_set_id = azurerm_availability_set.windows.id
-  size                = var.vm_size
+  size                = var.vm_win_size
   admin_username      = "adminuser"
   admin_password      = var.admin_password
 
@@ -61,10 +61,10 @@ resource "azurerm_windows_virtual_machine" "win-vm" {
   }
 
   source_image_reference {
-    publisher = "MicrosoftWindowsServer"
-    offer     = "WindowsServer"
-    sku       = "2016-Datacenter"
-    version   = "latest"
+    publisher = var.windows_image["publisher"]
+    offer     = var.windows_image["offer"]
+    sku       = var.windows_image["sku"]
+    version   = var.windows_image["version"]
   }
 
   boot_diagnostics {

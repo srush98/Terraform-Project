@@ -16,3 +16,22 @@ variable "prefix" {
   type    = string
   default = "n9400"
 }
+
+variable "db_password" {
+  description = "The database administrator password"
+  type        = string
+  sensitive   = true
+  default     = "P@ssw0rd1234!"
+}
+
+variable "vm_linux_size" {
+  type        = string
+  description = "The size of the Linux virtual machine."
+  default     = "Standard_B1ms"
+}
+
+variable "vm_win_size" {
+  type        = string
+  description = "The size of the Windows virtual machine."
+  default     = "Standard_B1ms"
+}

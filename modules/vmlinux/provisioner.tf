@@ -5,6 +5,7 @@ resource "null_resource" "ansible_provision" {
 
   depends_on = [azurerm_linux_virtual_machine.linux-vm]
 
+  # SSH Connection to the VM
   connection {
     type        = "ssh"
     host        = azurerm_public_ip.linux-pip[each.key].fqdn
@@ -12,7 +13,20 @@ resource "null_resource" "ansible_provision" {
     private_key = file("~/.ssh/id_rsa")
   }
 
+  # # Remove old SSH keys before provisioning
+  # provisioner "local-exec" {
+  #   command = "ssh-keygen -f ~/.ssh/known_hosts -R ${azurerm_public_ip.linux-pip[each.key].fqdn}"
+  # }
+  
+   # Verify connection to VM
+  provisioner "remote-exec" {
+      inline = [
+        "echo Hostname: $(hostname)"
+      ]
+    }
+  
+  # Run Ansible Playbook
   provisioner "local-exec" {
-    command = "ansible-playbook -i inventory.ini n01669400-playbook.yml"
+    command = "ansible-playbook -i ./ansible/inventory.ini ./ansible/n01669400-playbook.yml"
   }
 }
