@@ -1,0 +1,18 @@
+---
+# tasks file for roles/webserver-n01669400
+- name: Install Apache
+  package:
+    name: httpd
+    state: present
+
+- name: Create FQDN files
+  copy:
+    dest: "/var/www/html/index.html"
+    content: "{{ ansible_fqdn }}"
+    mode: "0444"
+
+- name: Start Apache and enable on reboot
+  service:
+    name: httpd
+    state: started
+    enabled: yes

@@ -1,0 +1,10 @@
+---
+# tasks file for roles/profile-n01669400
+- name: Append lines to /etc/profile
+  lineinfile:
+    path: /etc/profile
+    line: "{{ item }}"
+    state: present
+  loop:
+    - "#Test block added by Ansible……n01669400"
+    - "export TMOUT=1500"

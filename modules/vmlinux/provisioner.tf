@@ -13,6 +13,6 @@ resource "null_resource" "ansible_provision" {
   }
 
   provisioner "local-exec" {
-    command = "ansible-playbook -i ./ansible/inventory.ini ./ansible/n01669400-playbook.yml"
+    command = "ansible-playbook -i inventory.ini n01669400-playbook.yml"
   }
 }
