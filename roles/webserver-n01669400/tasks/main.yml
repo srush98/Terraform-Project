@@ -1,18 +1,33 @@
 ---
 # tasks file for roles/webserver-n01669400
-- name: Install Apache
-  package:
+- name: Install Apache web server
+  ansible.builtin.yum:
     name: httpd
     state: present
 
-- name: Create FQDN files
-  copy:
-    dest: "/var/www/html/index.html"
+- name: Create HTML files with FQDN
+  ansible.builtin.copy:
     content: "{{ ansible_fqdn }}"
-    mode: "0444"
+    dest: "/tmp/{{ inventory_hostname }}.html"
 
-- name: Start Apache and enable on reboot
-  service:
+- name: Copy HTML files to web server directory
+  ansible.builtin.copy:
+    src: "/tmp/{{ inventory_hostname }}.html"
+    dest: /var/www/html/index.html
+    remote_src: yes
+
+- name: Set permissions on index.html
+  ansible.builtin.file:
+    path: /var/www/html/index.html
+    mode: '0444'
+
+- name: Start Apache web server
+  ansible.builtin.service:
     name: httpd
     state: started
+  notify: Restart Apache
+
+- name: Enable Apache to start on boot
+  ansible.builtin.service:
+    name: httpd
     enabled: yes

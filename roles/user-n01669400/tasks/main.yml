@@ -9,24 +9,47 @@
   user:
     name: "{{ item }}"
     groups: cloudadmins,wheel
-    append: yes
     shell: /bin/bash
+    create_home: yes
     state: present
-  loop:
-    - user100
-    - user200
-    - user300
+  loop: "{{ user_list }}"
 
-- name: Generate SSH key for each user
-  user:
-    name: "{{ item }}"
-    generate_ssh_key: yes
-    ssh_key_bits: 2048
-    ssh_key_file: .ssh/id_rsa
-  loop:
-    - user100
-    - user200
-    - user300
+# - name: Generate SSH key for each user
+#   user:
+#     name: "{{ item }}"
+#     generate_ssh_key: yes
+#     ssh_key_bits: 2048
+#     ssh_key_file: .ssh/id_rsa
+#   loop: "{{ user_list }}"
+
+- name: Create .ssh directory for users
+  file:
+    path: "/home/{{ item }}/.ssh"
+    state: directory
+    owner: "{{ item }}"
+    group: "{{ item }}"
+    mode: '0700'
+  loop: "{{ user_list }}"
+
+- name: Generate SSH key pair for users (private key)
+  openssh_keypair:
+    path: "/home/{{ item }}/.ssh/id_rsa"
+    type: rsa
+    size: 2048
+    mode: '0600'
+    owner: "{{ item }}"
+    group: "{{ item }}"
+  loop: "{{ user_list }}"
+
+- name: Set authorized key for users
+  copy:
+    src: "/home/{{ item }}/.ssh/id_rsa.pub"
+    dest: "/home/{{ item }}/.ssh/authorized_keys"
+    owner: "{{ item }}"
+    group: "{{ item }}"
+    mode: '0644'
+    remote_src: yes
+  loop: "{{ user_list }}"
 
 - name: Fetch private key for user100 to local machine
   fetch:

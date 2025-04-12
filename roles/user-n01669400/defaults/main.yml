@@ -1,2 +1,6 @@
 ---
 # defaults file for roles/user-n01669400
+user_list:
+  - user100
+  - user200
+  - user300
