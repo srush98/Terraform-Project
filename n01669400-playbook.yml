@@ -7,6 +7,6 @@
     ansible_ssh_extra_args: "-o StrictHostKeyChecking=no"
   roles:
     - profile-n01669400
-    - user-n01669400
-    - datadisk-n01669400
-    - webserver-n01669400
+    # - user-n01669400
+    # - datadisk-n01669400
+    # - webserver-n01669400
