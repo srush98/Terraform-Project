@@ -1,0 +1,574 @@
+2025-04-12 19:11:45,067 p=8203 u=n01669400 n=ansible | PLAY [Apply roles to all Linux nodes] ******************************************
+2025-04-12 19:11:45,067 p=8207 u=n01669400 n=ansible | PLAY [Apply roles to all Linux nodes] ******************************************
+2025-04-12 19:11:45,067 p=8205 u=n01669400 n=ansible | PLAY [Apply roles to all Linux nodes] ******************************************
+2025-04-12 19:11:45,098 p=8205 u=n01669400 n=ansible | TASK [Gathering Facts] *********************************************************
+2025-04-12 19:11:45,098 p=8207 u=n01669400 n=ansible | TASK [Gathering Facts] *********************************************************
+2025-04-12 19:11:45,098 p=8203 u=n01669400 n=ansible | TASK [Gathering Facts] *********************************************************
+2025-04-12 19:11:48,924 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:11:48,945 p=8205 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:11:48,966 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:11:54,938 p=8205 u=n01669400 n=ansible | ok: [n9400-linux-0]
+2025-04-12 19:11:54,947 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-0]
+2025-04-12 19:11:54,975 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-0]
+2025-04-12 19:11:55,519 p=8205 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:11:55,561 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:11:55,583 p=8205 u=n01669400 n=ansible | TASK [profile-n01669400 : Append lines to /etc/profile] ************************
+2025-04-12 19:11:55,609 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:11:55,638 p=8203 u=n01669400 n=ansible | TASK [profile-n01669400 : Append lines to /etc/profile] ************************
+2025-04-12 19:11:55,693 p=8207 u=n01669400 n=ansible | TASK [profile-n01669400 : Append lines to /etc/profile] ************************
+2025-04-12 19:11:57,308 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-0] => (item=#Test block added by Ansible……n01669400)
+2025-04-12 19:11:57,366 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item=#Test block added by Ansible……n01669400)
+2025-04-12 19:11:57,415 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=#Test block added by Ansible……n01669400)
+2025-04-12 19:11:57,571 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=#Test block added by Ansible……n01669400)
+2025-04-12 19:11:58,758 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item=export TMOUT=1500)
+2025-04-12 19:11:58,937 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=export TMOUT=1500)
+2025-04-12 19:11:59,046 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=export TMOUT=1500)
+2025-04-12 19:11:59,222 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-1] => (item=#Test block added by Ansible……n01669400)
+2025-04-12 19:11:59,234 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-1] => (item=#Test block added by Ansible……n01669400)
+2025-04-12 19:11:59,436 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=#Test block added by Ansible……n01669400)
+2025-04-12 19:11:59,593 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=#Test block added by Ansible……n01669400)
+2025-04-12 19:11:59,593 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=#Test block added by Ansible……n01669400)
+2025-04-12 19:12:01,627 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-1] => (item=export TMOUT=1500)
+2025-04-12 19:12:01,764 p=8205 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=export TMOUT=1500)
+2025-04-12 19:12:01,765 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=export TMOUT=1500)
+2025-04-12 19:12:01,939 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=export TMOUT=1500)
+2025-04-12 19:12:01,939 p=8205 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=export TMOUT=1500)
+2025-04-12 19:12:01,950 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-0] => (item=export TMOUT=1500)
+2025-04-12 19:12:01,972 p=8203 u=n01669400 n=ansible | TASK [user-n01669400 : Create group cloudadmins] *******************************
+2025-04-12 19:12:01,978 p=8207 u=n01669400 n=ansible | TASK [user-n01669400 : Create group cloudadmins] *******************************
+2025-04-12 19:12:01,981 p=8205 u=n01669400 n=ansible | TASK [user-n01669400 : Create group cloudadmins] *******************************
+2025-04-12 19:12:04,706 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-0]
+2025-04-12 19:12:04,707 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-2]
+2025-04-12 19:12:04,978 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-2]
+2025-04-12 19:12:05,142 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-2]
+2025-04-12 19:12:05,339 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-0]
+2025-04-12 19:12:05,499 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-0]
+2025-04-12 19:12:07,127 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-1]
+2025-04-12 19:12:07,135 p=8207 u=n01669400 n=ansible | TASK [user-n01669400 : Create users and add them to groups] ********************
+2025-04-12 19:12:07,960 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-1]
+2025-04-12 19:12:07,969 p=8205 u=n01669400 n=ansible | TASK [user-n01669400 : Create users and add them to groups] ********************
+2025-04-12 19:12:08,129 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-1]
+2025-04-12 19:12:08,138 p=8203 u=n01669400 n=ansible | TASK [user-n01669400 : Create users and add them to groups] ********************
+2025-04-12 19:12:09,592 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item=user100)
+2025-04-12 19:12:10,181 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user100)
+2025-04-12 19:12:10,181 p=8205 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user100)
+2025-04-12 19:12:10,257 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-1] => (item=user100)
+2025-04-12 19:12:10,257 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user100)
+2025-04-12 19:12:10,297 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-1] => (item=user100)
+2025-04-12 19:12:11,559 p=8205 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user100)
+2025-04-12 19:12:11,649 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-0] => (item=user100)
+2025-04-12 19:12:11,682 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user100)
+2025-04-12 19:12:12,051 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user200)
+2025-04-12 19:12:12,063 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item=user200)
+2025-04-12 19:12:12,229 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item=user200)
+2025-04-12 19:12:14,686 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item=user300)
+2025-04-12 19:12:15,153 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user200)
+2025-04-12 19:12:15,154 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-0] => (item=user200)
+2025-04-12 19:12:15,157 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-1] => (item=user200)
+2025-04-12 19:12:15,334 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item=user300)
+2025-04-12 19:12:16,299 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-1] => (item=user200)
+2025-04-12 19:12:17,210 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-0] => (item=user200)
+2025-04-12 19:12:18,008 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-1] => (item=user200)
+2025-04-12 19:12:17,769 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-1] => (item=user300)
+2025-04-12 19:12:18,087 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user300)
+2025-04-12 19:12:18,278 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-0] => (item=user300)
+2025-04-12 19:12:18,360 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-0] => (item=user300)
+2025-04-12 19:12:18,370 p=8203 u=n01669400 n=ansible | TASK [user-n01669400 : Create .ssh directory for users] ************************
+2025-04-12 19:12:18,753 p=8205 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user300)
+2025-04-12 19:12:18,762 p=8205 u=n01669400 n=ansible | TASK [user-n01669400 : Create .ssh directory for users] ************************
+2025-04-12 19:12:19,415 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-0] => (item=user300)
+2025-04-12 19:12:20,451 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-1] => (item=user100)
+2025-04-12 19:12:20,646 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-0] => (item=user100)
+2025-04-12 19:12:20,967 p=8205 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user100)
+2025-04-12 19:12:21,184 p=8205 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user100)
+2025-04-12 19:12:22,416 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-1] => (item=user200)
+2025-04-12 19:12:22,605 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-0] => (item=user200)
+2025-04-12 19:12:22,927 p=8205 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user200)
+2025-04-12 19:12:23,136 p=8205 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user200)
+2025-04-12 19:12:24,384 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-1] => (item=user300)
+2025-04-12 19:12:24,601 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-0] => (item=user300)
+2025-04-12 19:12:24,807 p=8205 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user300)
+2025-04-12 19:12:25,030 p=8205 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user300)
+2025-04-12 19:12:27,134 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item=user300)
+2025-04-12 19:12:27,147 p=8207 u=n01669400 n=ansible | TASK [user-n01669400 : Create .ssh directory for users] ************************
+2025-04-12 19:12:28,818 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item=user100)
+2025-04-12 19:12:28,819 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user100)
+2025-04-12 19:12:28,832 p=8205 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user100)
+2025-04-12 19:12:28,851 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user100)
+2025-04-12 19:12:29,415 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user100)
+2025-04-12 19:12:30,269 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user200)
+2025-04-12 19:12:30,318 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user200)
+2025-04-12 19:12:31,681 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user300)
+2025-04-12 19:12:31,740 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user300)
+2025-04-12 19:12:34,056 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item=user200)
+2025-04-12 19:12:34,061 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item=user200)
+2025-04-12 19:12:34,070 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user200)
+2025-04-12 19:12:36,088 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item=user300)
+2025-04-12 19:12:36,099 p=8207 u=n01669400 n=ansible | TASK [user-n01669400 : Generate SSH key pair for users (private key)] **********
+2025-04-12 19:12:36,504 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user300)
+2025-04-12 19:12:36,513 p=8203 u=n01669400 n=ansible | TASK [user-n01669400 : Generate SSH key pair for users (private key)] **********
+2025-04-12 19:12:36,552 p=8205 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user300)
+2025-04-12 19:12:36,577 p=8205 u=n01669400 n=ansible | TASK [user-n01669400 : Generate SSH key pair for users (private key)] **********
+2025-04-12 19:12:39,124 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item=user100)
+2025-04-12 19:12:39,140 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item=user100)
+2025-04-12 19:12:39,258 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item=user100)
+2025-04-12 19:12:40,574 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-1] => (item=user100)
+2025-04-12 19:12:40,692 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-0] => (item=user100)
+2025-04-12 19:12:40,741 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user100)
+2025-04-12 19:12:40,849 p=8205 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user100)
+2025-04-12 19:12:40,851 p=8205 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user100)
+2025-04-12 19:12:40,893 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-0] => (item=user100)
+2025-04-12 19:12:41,759 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item=user200)
+2025-04-12 19:12:41,804 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item=user200)
+2025-04-12 19:12:41,842 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item=user200)
+2025-04-12 19:12:44,661 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-1] => (item=user200)
+2025-04-12 19:12:44,859 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user200)
+2025-04-12 19:12:44,930 p=8205 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user200)
+2025-04-12 19:12:45,253 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item=user300)
+2025-04-12 19:12:45,390 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item=user300)
+2025-04-12 19:12:45,485 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item=user300)
+2025-04-12 19:12:45,725 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-0] => (item=user200)
+2025-04-12 19:12:45,912 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-0] => (item=user200)
+2025-04-12 19:12:45,966 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-0] => (item=user200)
+2025-04-12 19:12:48,259 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-1] => (item=user300)
+2025-04-12 19:12:48,267 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-1] => (item=user300)
+2025-04-12 19:12:48,326 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-1] => (item=user300)
+2025-04-12 19:12:48,763 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-0] => (item=user300)
+2025-04-12 19:12:48,779 p=8205 u=n01669400 n=ansible | TASK [user-n01669400 : Set authorized key for users] ***************************
+2025-04-12 19:12:48,842 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-0] => (item=user300)
+2025-04-12 19:12:48,857 p=8203 u=n01669400 n=ansible | TASK [user-n01669400 : Set authorized key for users] ***************************
+2025-04-12 19:12:48,899 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-0] => (item=user300)
+2025-04-12 19:12:48,916 p=8207 u=n01669400 n=ansible | TASK [user-n01669400 : Set authorized key for users] ***************************
+2025-04-12 19:12:51,780 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-0] => (item=user100)
+2025-04-12 19:12:51,881 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user100)
+2025-04-12 19:12:51,948 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user100)
+2025-04-12 19:12:52,021 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-1] => (item=user100)
+2025-04-12 19:12:52,076 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user100)
+2025-04-12 19:12:52,098 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user100)
+2025-04-12 19:12:52,268 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item=user100)
+2025-04-12 19:12:52,350 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user100)
+2025-04-12 19:12:52,454 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user100)
+2025-04-12 19:12:54,731 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-0] => (item=user200)
+2025-04-12 19:12:54,844 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user200)
+2025-04-12 19:12:54,852 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user200)
+2025-04-12 19:12:54,875 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-1] => (item=user200)
+2025-04-12 19:12:54,968 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user200)
+2025-04-12 19:12:55,056 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user200)
+2025-04-12 19:12:55,289 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item=user200)
+2025-04-12 19:12:55,419 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user200)
+2025-04-12 19:12:55,431 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user200)
+2025-04-12 19:12:56,958 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-0] => (item=user300)
+2025-04-12 19:12:57,627 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user300)
+2025-04-12 19:12:57,670 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user300)
+2025-04-12 19:12:57,869 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-1] => (item=user300)
+2025-04-12 19:12:57,989 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user300)
+2025-04-12 19:12:58,003 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user300)
+2025-04-12 19:12:58,479 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item=user300)
+2025-04-12 19:12:58,525 p=8205 u=n01669400 n=ansible | TASK [user-n01669400 : Fetch private key for user100 to local machine] *********
+2025-04-12 19:12:58,558 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user300)
+2025-04-12 19:12:58,578 p=8207 u=n01669400 n=ansible | TASK [user-n01669400 : Fetch private key for user100 to local machine] *********
+2025-04-12 19:12:58,596 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user300)
+2025-04-12 19:12:58,619 p=8203 u=n01669400 n=ansible | TASK [user-n01669400 : Fetch private key for user100 to local machine] *********
+2025-04-12 19:13:01,531 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-0]
+2025-04-12 19:13:01,588 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-1]
+2025-04-12 19:13:01,599 p=8203 u=n01669400 n=ansible | ok: [n9400-linux-0]
+2025-04-12 19:13:01,644 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-0]
+2025-04-12 19:13:01,678 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-2]
+2025-04-12 19:13:01,690 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-1]
+2025-04-12 19:13:01,710 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-1]
+2025-04-12 19:13:01,745 p=8203 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Create 4GB partition] *******************************
+2025-04-12 19:13:01,756 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-2]
+2025-04-12 19:13:01,784 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:13:01,802 p=8205 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Create 4GB partition] *******************************
+2025-04-12 19:13:01,819 p=8207 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Create 4GB partition] *******************************
+2025-04-12 19:13:04,217 p=8203 u=n01669400 n=ansible | fatal: [n9400-linux-0]: FAILED! => {"changed": false, "err": "Error: Could not stat device /dev/sdc - No such file or directory.\n", "msg": "Error while getting device information with parted script: '/sbin/parted -s -m /dev/sdc -- unit 'KiB' print'", "out": "", "rc": 1}
+2025-04-12 19:13:05,090 p=8207 u=n01669400 n=ansible | fatal: [n9400-linux-0]: FAILED! => {"changed": false, "err": "Error: Could not stat device /dev/sdc - No such file or directory.\n", "msg": "Error while getting device information with parted script: '/sbin/parted -s -m /dev/sdc -- unit 'KiB' print'", "out": "", "rc": 1}
+2025-04-12 19:13:05,103 p=8205 u=n01669400 n=ansible | fatal: [n9400-linux-0]: FAILED! => {"changed": false, "err": "Error: Could not stat device /dev/sdc - No such file or directory.\n", "msg": "Error while getting device information with parted script: '/sbin/parted -s -m /dev/sdc -- unit 'KiB' print'", "out": "", "rc": 1}
+2025-04-12 19:13:05,388 p=8205 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:13:05,431 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:13:05,475 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-2]
+2025-04-12 19:13:05,708 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-1]
+2025-04-12 19:13:05,716 p=8207 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Create 5GB partition] *******************************
+2025-04-12 19:13:05,741 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-1]
+2025-04-12 19:13:05,751 p=8203 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Create 5GB partition] *******************************
+2025-04-12 19:13:05,868 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-1]
+2025-04-12 19:13:05,878 p=8205 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Create 5GB partition] *******************************
+2025-04-12 19:13:08,917 p=8203 u=n01669400 n=ansible | fatal: [n9400-linux-1]: FAILED! => {"changed": false, "err": "Error: Can't have overlapping partitions.\n", "msg": "Error while running parted script: /sbin/parted -s -m -a optimal /dev/sdc -- unit KiB mkpart primary 4GB 100%", "out": "", "rc": 1}
+2025-04-12 19:13:09,221 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-1]
+2025-04-12 19:13:09,241 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-1]
+2025-04-12 19:13:09,452 p=8205 u=n01669400 n=ansible | fatal: [n9400-linux-2]: FAILED! => {"changed": false, "err": "Error: Can't have overlapping partitions.\n", "msg": "Error while running parted script: /sbin/parted -s -m -a optimal /dev/sdc -- unit KiB mkpart primary 4GB 100%", "out": "", "rc": 1}
+2025-04-12 19:13:09,466 p=8205 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Format first partition as XFS] **********************
+2025-04-12 19:13:09,759 p=8203 u=n01669400 n=ansible | changed: [n9400-linux-2]
+2025-04-12 19:13:09,760 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-2]
+2025-04-12 19:13:09,768 p=8207 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Format first partition as XFS] **********************
+2025-04-12 19:13:09,770 p=8203 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Format first partition as XFS] **********************
+2025-04-12 19:13:12,227 p=8207 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:13:12,372 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-1]
+2025-04-12 19:13:12,377 p=8203 u=n01669400 n=ansible | fatal: [n9400-linux-2]: FAILED! => {"changed": false, "cmd": "/sbin/mkfs.xfs -f /dev/sdc1", "msg": "mkfs.xfs: cannot open /dev/sdc1: Device or resource busy", "rc": 1, "stderr": "mkfs.xfs: cannot open /dev/sdc1: Device or resource busy\n", "stderr_lines": ["mkfs.xfs: cannot open /dev/sdc1: Device or resource busy"], "stdout": "", "stdout_lines": []}
+2025-04-12 19:13:12,380 p=8203 u=n01669400 n=ansible | PLAY RECAP *********************************************************************
+2025-04-12 19:13:12,381 p=8203 u=n01669400 n=ansible | n9400-linux-0              : ok=8    changed=4    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-04-12 19:13:12,381 p=8203 u=n01669400 n=ansible | n9400-linux-1              : ok=9    changed=7    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-04-12 19:13:12,381 p=8203 u=n01669400 n=ansible | n9400-linux-2              : ok=10   changed=7    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-04-12 19:13:12,385 p=8205 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Format second partition as EXT4] ********************
+2025-04-12 19:13:13,285 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-2]
+2025-04-12 19:13:13,298 p=8207 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Format second partition as EXT4] ********************
+2025-04-12 19:13:15,620 p=8207 u=n01669400 n=ansible | fatal: [n9400-linux-1]: FAILED! => {"changed": false, "cmd": "/sbin/mkfs.ext4 -F /dev/sdc2", "msg": "mke2fs 1.45.4 (23-Sep-2019)\n/dev/sdc2 is apparently in use by the system; will not make a filesystem here!", "rc": 1, "stderr": "mke2fs 1.45.4 (23-Sep-2019)\n/dev/sdc2 is apparently in use by the system; will not make a filesystem here!\n", "stderr_lines": ["mke2fs 1.45.4 (23-Sep-2019)", "/dev/sdc2 is apparently in use by the system; will not make a filesystem here!"], "stdout": "", "stdout_lines": []}
+2025-04-12 19:13:15,789 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-1]
+2025-04-12 19:13:15,810 p=8205 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Mount partitions persistently] **********************
+2025-04-12 19:13:16,925 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-2]
+2025-04-12 19:13:16,940 p=8207 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Mount partitions persistently] **********************
+2025-04-12 19:13:18,198 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-1] => (item={'mount': '/part1', 'device': '/dev/sdc1', 'fstype': 'xfs'})
+2025-04-12 19:13:19,509 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item={'mount': '/part1', 'device': '/dev/sdc1', 'fstype': 'xfs'})
+2025-04-12 19:13:18,051 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-1] => (item={'mount': '/part2', 'device': '/dev/sdc2', 'fstype': 'ext4'})
+2025-04-12 19:13:18,103 p=8205 u=n01669400 n=ansible | TASK [webserver-n01669400 : Install Apache web server] *************************
+2025-04-12 19:13:19,234 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-2] => (item={'mount': '/part2', 'device': '/dev/sdc2', 'fstype': 'ext4'})
+2025-04-12 19:13:19,256 p=8207 u=n01669400 n=ansible | TASK [webserver-n01669400 : Install Apache web server] *************************
+2025-04-12 19:14:06,099 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-1]
+2025-04-12 19:14:06,114 p=8205 u=n01669400 n=ansible | TASK [webserver-n01669400 : Create HTML files with FQDN] ***********************
+2025-04-12 19:14:08,670 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-1]
+2025-04-12 19:14:08,679 p=8205 u=n01669400 n=ansible | TASK [webserver-n01669400 : Copy HTML files to web server directory] ***********
+2025-04-12 19:14:09,631 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-1]
+2025-04-12 19:14:09,642 p=8205 u=n01669400 n=ansible | TASK [webserver-n01669400 : Set permissions on index.html] *********************
+2025-04-12 19:14:10,652 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-1]
+2025-04-12 19:14:10,664 p=8205 u=n01669400 n=ansible | TASK [webserver-n01669400 : Start Apache web server] ***************************
+2025-04-12 19:14:12,614 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-1]
+2025-04-12 19:14:12,623 p=8205 u=n01669400 n=ansible | TASK [webserver-n01669400 : Enable Apache to start on boot] ********************
+2025-04-12 19:14:14,132 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-1]
+2025-04-12 19:14:14,157 p=8205 u=n01669400 n=ansible | RUNNING HANDLER [webserver-n01669400 : Restart Apache] *************************
+2025-04-12 19:14:16,525 p=8205 u=n01669400 n=ansible | changed: [n9400-linux-1]
+2025-04-12 19:14:16,541 p=8205 u=n01669400 n=ansible | PLAY RECAP *********************************************************************
+2025-04-12 19:14:16,542 p=8205 u=n01669400 n=ansible | n9400-linux-0              : ok=8    changed=6    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-04-12 19:14:16,542 p=8205 u=n01669400 n=ansible | n9400-linux-1              : ok=20   changed=18   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-12 19:14:16,542 p=8205 u=n01669400 n=ansible | n9400-linux-2              : ok=9    changed=7    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-04-12 19:14:27,218 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-2]
+2025-04-12 19:14:27,235 p=8207 u=n01669400 n=ansible | TASK [webserver-n01669400 : Create HTML files with FQDN] ***********************
+2025-04-12 19:14:29,776 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-2]
+2025-04-12 19:14:29,784 p=8207 u=n01669400 n=ansible | TASK [webserver-n01669400 : Copy HTML files to web server directory] ***********
+2025-04-12 19:14:30,837 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-2]
+2025-04-12 19:14:30,847 p=8207 u=n01669400 n=ansible | TASK [webserver-n01669400 : Set permissions on index.html] *********************
+2025-04-12 19:14:31,847 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-2]
+2025-04-12 19:14:31,857 p=8207 u=n01669400 n=ansible | TASK [webserver-n01669400 : Start Apache web server] ***************************
+2025-04-12 19:14:33,920 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-2]
+2025-04-12 19:14:33,933 p=8207 u=n01669400 n=ansible | TASK [webserver-n01669400 : Enable Apache to start on boot] ********************
+2025-04-12 19:14:35,685 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-2]
+2025-04-12 19:14:35,719 p=8207 u=n01669400 n=ansible | RUNNING HANDLER [webserver-n01669400 : Restart Apache] *************************
+2025-04-12 19:14:38,408 p=8207 u=n01669400 n=ansible | changed: [n9400-linux-2]
+2025-04-12 19:14:38,431 p=8207 u=n01669400 n=ansible | PLAY RECAP *********************************************************************
+2025-04-12 19:14:38,431 p=8207 u=n01669400 n=ansible | n9400-linux-0              : ok=8    changed=4    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-04-12 19:14:38,432 p=8207 u=n01669400 n=ansible | n9400-linux-1              : ok=11   changed=6    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-04-12 19:14:38,460 p=8207 u=n01669400 n=ansible | n9400-linux-2              : ok=20   changed=15   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-12 19:30:45,250 p=16106 u=n01669400 n=ansible | PLAY [Apply roles to all Linux nodes] ******************************************
+2025-04-12 19:30:45,251 p=16104 u=n01669400 n=ansible | PLAY [Apply roles to all Linux nodes] ******************************************
+2025-04-12 19:30:45,250 p=16102 u=n01669400 n=ansible | PLAY [Apply roles to all Linux nodes] ******************************************
+2025-04-12 19:30:45,279 p=16102 u=n01669400 n=ansible | TASK [Gathering Facts] *********************************************************
+2025-04-12 19:30:45,279 p=16104 u=n01669400 n=ansible | TASK [Gathering Facts] *********************************************************
+2025-04-12 19:30:45,279 p=16106 u=n01669400 n=ansible | TASK [Gathering Facts] *********************************************************
+2025-04-12 19:30:47,889 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:30:47,957 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:30:47,958 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:30:47,984 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-0]
+2025-04-12 19:30:48,042 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-0]
+2025-04-12 19:30:48,059 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-0]
+2025-04-12 19:30:48,130 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:30:48,172 p=16102 u=n01669400 n=ansible | TASK [profile-n01669400 : Append lines to /etc/profile] ************************
+2025-04-12 19:30:48,216 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:30:48,223 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:30:48,272 p=16104 u=n01669400 n=ansible | TASK [profile-n01669400 : Append lines to /etc/profile] ************************
+2025-04-12 19:30:48,272 p=16106 u=n01669400 n=ansible | TASK [profile-n01669400 : Append lines to /etc/profile] ************************
+2025-04-12 19:30:49,356 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=#Test block added by Ansible……n01669400)
+2025-04-12 19:30:49,370 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=#Test block added by Ansible……n01669400)
+2025-04-12 19:30:49,391 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=#Test block added by Ansible……n01669400)
+2025-04-12 19:30:49,969 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=#Test block added by Ansible……n01669400)
+2025-04-12 19:30:49,980 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=#Test block added by Ansible……n01669400)
+2025-04-12 19:30:50,029 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=#Test block added by Ansible……n01669400)
+2025-04-12 19:30:50,040 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=#Test block added by Ansible……n01669400)
+2025-04-12 19:30:50,043 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=#Test block added by Ansible……n01669400)
+2025-04-12 19:30:50,048 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=#Test block added by Ansible……n01669400)
+2025-04-12 19:30:50,720 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=export TMOUT=1500)
+2025-04-12 19:30:50,803 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=export TMOUT=1500)
+2025-04-12 19:30:50,817 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=export TMOUT=1500)
+2025-04-12 19:30:50,845 p=16102 u=n01669400 n=ansible | TASK [user-n01669400 : Create group cloudadmins] *******************************
+2025-04-12 19:30:51,323 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=export TMOUT=1500)
+2025-04-12 19:30:51,325 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=export TMOUT=1500)
+2025-04-12 19:30:51,397 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=export TMOUT=1500)
+2025-04-12 19:30:51,428 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=export TMOUT=1500)
+2025-04-12 19:30:51,440 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=export TMOUT=1500)
+2025-04-12 19:30:51,473 p=16106 u=n01669400 n=ansible | TASK [user-n01669400 : Create group cloudadmins] *******************************
+2025-04-12 19:30:51,478 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=export TMOUT=1500)
+2025-04-12 19:30:51,518 p=16104 u=n01669400 n=ansible | TASK [user-n01669400 : Create group cloudadmins] *******************************
+2025-04-12 19:30:52,267 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:30:52,299 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:30:52,316 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-0]
+2025-04-12 19:30:52,325 p=16102 u=n01669400 n=ansible | TASK [user-n01669400 : Create users and add them to groups] ********************
+2025-04-12 19:30:53,042 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:30:53,083 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-0]
+2025-04-12 19:30:53,095 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:30:53,130 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:30:53,140 p=16106 u=n01669400 n=ansible | TASK [user-n01669400 : Create users and add them to groups] ********************
+2025-04-12 19:30:53,151 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-0]
+2025-04-12 19:30:53,174 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:30:53,188 p=16104 u=n01669400 n=ansible | TASK [user-n01669400 : Create users and add them to groups] ********************
+2025-04-12 19:30:53,799 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user100)
+2025-04-12 19:30:53,875 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user100)
+2025-04-12 19:30:53,958 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user100)
+2025-04-12 19:30:54,781 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user100)
+2025-04-12 19:30:55,016 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user100)
+2025-04-12 19:30:55,058 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user100)
+2025-04-12 19:30:55,068 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user100)
+2025-04-12 19:30:55,069 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user100)
+2025-04-12 19:30:55,197 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user100)
+2025-04-12 19:30:55,379 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user200)
+2025-04-12 19:30:55,532 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user200)
+2025-04-12 19:30:55,596 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user200)
+2025-04-12 19:30:56,452 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user200)
+2025-04-12 19:30:56,708 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user200)
+2025-04-12 19:30:56,741 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user200)
+2025-04-12 19:30:56,905 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user200)
+2025-04-12 19:30:56,922 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user200)
+2025-04-12 19:30:56,966 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user200)
+2025-04-12 19:30:57,036 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user300)
+2025-04-12 19:30:57,186 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user300)
+2025-04-12 19:30:57,235 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user300)
+2025-04-12 19:30:57,248 p=16102 u=n01669400 n=ansible | TASK [user-n01669400 : Create .ssh directory for users] ************************
+2025-04-12 19:30:58,061 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user300)
+2025-04-12 19:30:58,187 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user300)
+2025-04-12 19:30:58,200 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user300)
+2025-04-12 19:30:58,327 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user300)
+2025-04-12 19:30:58,532 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user300)
+2025-04-12 19:30:58,542 p=16104 u=n01669400 n=ansible | TASK [user-n01669400 : Create .ssh directory for users] ************************
+2025-04-12 19:30:58,545 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user300)
+2025-04-12 19:30:58,560 p=16106 u=n01669400 n=ansible | TASK [user-n01669400 : Create .ssh directory for users] ************************
+2025-04-12 19:30:58,643 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user100)
+2025-04-12 19:30:58,711 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user100)
+2025-04-12 19:30:58,960 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user100)
+2025-04-12 19:30:59,663 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user200)
+2025-04-12 19:30:59,966 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user200)
+2025-04-12 19:31:00,277 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user100)
+2025-04-12 19:31:00,283 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user100)
+2025-04-12 19:31:00,307 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user100)
+2025-04-12 19:31:00,317 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user100)
+2025-04-12 19:31:00,347 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user100)
+2025-04-12 19:31:00,356 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user100)
+2025-04-12 19:31:00,495 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user200)
+2025-04-12 19:31:01,160 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user300)
+2025-04-12 19:31:01,507 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user300)
+2025-04-12 19:31:01,736 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user200)
+2025-04-12 19:31:01,749 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user200)
+2025-04-12 19:31:01,759 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user200)
+2025-04-12 19:31:01,759 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user200)
+2025-04-12 19:31:01,821 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user200)
+2025-04-12 19:31:01,861 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user200)
+2025-04-12 19:31:02,075 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user300)
+2025-04-12 19:31:02,086 p=16102 u=n01669400 n=ansible | TASK [user-n01669400 : Generate SSH key pair for users (private key)] **********
+2025-04-12 19:31:02,899 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user300)
+2025-04-12 19:31:03,073 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user300)
+2025-04-12 19:31:03,079 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user300)
+2025-04-12 19:31:03,081 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user300)
+2025-04-12 19:31:03,206 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user300)
+2025-04-12 19:31:03,208 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user300)
+2025-04-12 19:31:03,220 p=16104 u=n01669400 n=ansible | TASK [user-n01669400 : Generate SSH key pair for users (private key)] **********
+2025-04-12 19:31:03,221 p=16106 u=n01669400 n=ansible | TASK [user-n01669400 : Generate SSH key pair for users (private key)] **********
+2025-04-12 19:31:03,661 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user100)
+2025-04-12 19:31:03,899 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user100)
+2025-04-12 19:31:03,959 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user100)
+2025-04-12 19:31:05,572 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user100)
+2025-04-12 19:31:05,594 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user200)
+2025-04-12 19:31:05,606 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user100)
+2025-04-12 19:31:05,658 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user100)
+2025-04-12 19:31:05,683 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user100)
+2025-04-12 19:31:05,735 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user100)
+2025-04-12 19:31:05,906 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user100)
+2025-04-12 19:31:05,931 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user200)
+2025-04-12 19:31:06,095 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user200)
+2025-04-12 19:31:07,565 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user200)
+2025-04-12 19:31:07,582 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user200)
+2025-04-12 19:31:07,612 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user200)
+2025-04-12 19:31:07,629 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user200)
+2025-04-12 19:31:07,637 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user300)
+2025-04-12 19:31:07,904 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user200)
+2025-04-12 19:31:07,952 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user300)
+2025-04-12 19:31:08,143 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user200)
+2025-04-12 19:31:08,188 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user300)
+2025-04-12 19:31:08,227 p=16102 u=n01669400 n=ansible | TASK [user-n01669400 : Set authorized key for users] ***************************
+2025-04-12 19:31:09,140 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user300)
+2025-04-12 19:31:09,176 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user300)
+2025-04-12 19:31:09,238 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user300)
+2025-04-12 19:31:09,259 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user300)
+2025-04-12 19:31:09,274 p=16104 u=n01669400 n=ansible | TASK [user-n01669400 : Set authorized key for users] ***************************
+2025-04-12 19:31:09,727 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user300)
+2025-04-12 19:31:09,759 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user100)
+2025-04-12 19:31:09,887 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user300)
+2025-04-12 19:31:09,902 p=16106 u=n01669400 n=ansible | TASK [user-n01669400 : Set authorized key for users] ***************************
+2025-04-12 19:31:09,902 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user100)
+2025-04-12 19:31:10,085 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user100)
+2025-04-12 19:31:10,564 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user100)
+2025-04-12 19:31:10,644 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user100)
+2025-04-12 19:31:10,701 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user100)
+2025-04-12 19:31:10,952 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user200)
+2025-04-12 19:31:11,325 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user200)
+2025-04-12 19:31:11,352 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user100)
+2025-04-12 19:31:11,495 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user200)
+2025-04-12 19:31:11,574 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user100)
+2025-04-12 19:31:11,662 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user100)
+2025-04-12 19:31:11,890 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user200)
+2025-04-12 19:31:11,900 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user200)
+2025-04-12 19:31:12,263 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user200)
+2025-04-12 19:31:12,283 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user300)
+2025-04-12 19:31:12,600 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user300)
+2025-04-12 19:31:12,653 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user200)
+2025-04-12 19:31:12,858 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user300)
+2025-04-12 19:31:12,899 p=16102 u=n01669400 n=ansible | TASK [user-n01669400 : Fetch private key for user100 to local machine] *********
+2025-04-12 19:31:13,055 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user200)
+2025-04-12 19:31:13,063 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user300)
+2025-04-12 19:31:13,229 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user200)
+2025-04-12 19:31:13,303 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user300)
+2025-04-12 19:31:13,613 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user300)
+2025-04-12 19:31:13,624 p=16104 u=n01669400 n=ansible | TASK [user-n01669400 : Fetch private key for user100 to local machine] *********
+2025-04-12 19:31:13,763 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item=user300)
+2025-04-12 19:31:14,208 p=16102 u=n01669400 n=ansible | changed: [n9400-linux-1]
+2025-04-12 19:31:14,430 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item=user300)
+2025-04-12 19:31:14,449 p=16102 u=n01669400 n=ansible | changed: [n9400-linux-0]
+2025-04-12 19:31:14,496 p=16102 u=n01669400 n=ansible | changed: [n9400-linux-2]
+2025-04-12 19:31:14,526 p=16102 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Create 4GB partition] *******************************
+2025-04-12 19:31:14,588 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item=user300)
+2025-04-12 19:31:14,602 p=16106 u=n01669400 n=ansible | TASK [user-n01669400 : Fetch private key for user100 to local machine] *********
+2025-04-12 19:31:14,798 p=16104 u=n01669400 n=ansible | changed: [n9400-linux-1]
+2025-04-12 19:31:15,039 p=16104 u=n01669400 n=ansible | changed: [n9400-linux-0]
+2025-04-12 19:31:15,132 p=16104 u=n01669400 n=ansible | changed: [n9400-linux-2]
+2025-04-12 19:31:15,167 p=16104 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Create 4GB partition] *******************************
+2025-04-12 19:31:16,040 p=16106 u=n01669400 n=ansible | changed: [n9400-linux-0]
+2025-04-12 19:31:16,059 p=16106 u=n01669400 n=ansible | fatal: [n9400-linux-1]: FAILED! => {"changed": false, "checksum": "8eb2dd9fb34a7222e3ca16d925dc7a1abb01e27b", "dest": "/home/n01669400/user100_id_rsa", "file": "/home/user100/.ssh/id_rsa", "md5sum": "01df64ed66635b340ebc7886b20df666", "msg": "checksum mismatch", "remote_checksum": "ca8646c6e4212fd895cb4f22a23f6abda6865540", "remote_md5sum": null}
+2025-04-12 19:31:16,146 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:31:16,241 p=16106 u=n01669400 n=ansible | changed: [n9400-linux-2]
+2025-04-12 19:31:16,271 p=16106 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Create 4GB partition] *******************************
+2025-04-12 19:31:16,302 p=16102 u=n01669400 n=ansible | changed: [n9400-linux-0]
+2025-04-12 19:31:16,335 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:31:16,345 p=16102 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Create 5GB partition] *******************************
+2025-04-12 19:31:16,647 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:31:16,917 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-0]
+2025-04-12 19:31:16,978 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:31:16,988 p=16104 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Create 5GB partition] *******************************
+2025-04-12 19:31:17,386 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:31:18,057 p=16102 u=n01669400 n=ansible | changed: [n9400-linux-0]
+2025-04-12 19:31:18,087 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:31:18,087 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:31:18,098 p=16102 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Format first partition as XFS] **********************
+2025-04-12 19:31:16,675 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-0]
+2025-04-12 19:31:16,732 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:31:16,742 p=16106 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Create 5GB partition] *******************************
+2025-04-12 19:31:17,045 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-0]
+2025-04-12 19:31:17,080 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:31:17,089 p=16104 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Format first partition as XFS] **********************
+2025-04-12 19:31:17,550 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:31:17,946 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:31:18,285 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:31:18,307 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:31:18,581 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-0]
+2025-04-12 19:31:18,590 p=16106 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Format first partition as XFS] **********************
+2025-04-12 19:31:18,597 p=16102 u=n01669400 n=ansible | changed: [n9400-linux-0]
+2025-04-12 19:31:18,609 p=16102 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Format second partition as EXT4] ********************
+2025-04-12 19:31:18,619 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:31:18,773 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-0]
+2025-04-12 19:31:18,786 p=16104 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Format second partition as EXT4] ********************
+2025-04-12 19:31:19,533 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:31:19,676 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:31:19,836 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:31:20,292 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:31:20,303 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:31:21,020 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-0]
+2025-04-12 19:31:21,028 p=16106 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Format second partition as EXT4] ********************
+2025-04-12 19:31:21,030 p=16104 u=n01669400 n=ansible | fatal: [n9400-linux-0]: FAILED! => {"changed": false, "cmd": "/sbin/mkfs.ext4 -F /dev/sdc2", "msg": "mke2fs 1.45.4 (23-Sep-2019)\n/dev/sdc2 is apparently in use by the system; will not make a filesystem here!", "rc": 1, "stderr": "mke2fs 1.45.4 (23-Sep-2019)\n/dev/sdc2 is apparently in use by the system; will not make a filesystem here!\n", "stderr_lines": ["mke2fs 1.45.4 (23-Sep-2019)", "/dev/sdc2 is apparently in use by the system; will not make a filesystem here!"], "stdout": "", "stdout_lines": []}
+2025-04-12 19:31:21,052 p=16104 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Mount partitions persistently] **********************
+2025-04-12 19:31:21,244 p=16102 u=n01669400 n=ansible | changed: [n9400-linux-0]
+2025-04-12 19:31:21,251 p=16102 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Mount partitions persistently] **********************
+2025-04-12 19:31:22,032 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-0]
+2025-04-12 19:31:22,077 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:31:22,086 p=16106 u=n01669400 n=ansible | TASK [datadisk-n01669400 : Mount partitions persistently] **********************
+2025-04-12 19:31:22,458 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item={'mount': '/part1', 'device': '/dev/sdc1', 'fstype': 'xfs'})
+2025-04-12 19:31:22,577 p=16102 u=n01669400 n=ansible | changed: [n9400-linux-0] => (item={'mount': '/part1', 'device': '/dev/sdc1', 'fstype': 'xfs'})
+2025-04-12 19:31:22,651 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item={'mount': '/part1', 'device': '/dev/sdc1', 'fstype': 'xfs'})
+2025-04-12 19:31:22,669 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item={'mount': '/part1', 'device': '/dev/sdc1', 'fstype': 'xfs'})
+2025-04-12 19:31:22,872 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item={'mount': '/part1', 'device': '/dev/sdc1', 'fstype': 'xfs'})
+2025-04-12 19:31:23,523 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item={'mount': '/part1', 'device': '/dev/sdc1', 'fstype': 'xfs'})
+2025-04-12 19:31:23,571 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item={'mount': '/part2', 'device': '/dev/sdc2', 'fstype': 'ext4'})
+2025-04-12 19:31:23,713 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1] => (item={'mount': '/part2', 'device': '/dev/sdc2', 'fstype': 'ext4'})
+2025-04-12 19:31:23,719 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item={'mount': '/part1', 'device': '/dev/sdc1', 'fstype': 'xfs'})
+2025-04-12 19:31:23,755 p=16102 u=n01669400 n=ansible | changed: [n9400-linux-0] => (item={'mount': '/part2', 'device': '/dev/sdc2', 'fstype': 'ext4'})
+2025-04-12 19:31:24,126 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item={'mount': '/part2', 'device': '/dev/sdc2', 'fstype': 'ext4'})
+2025-04-12 19:31:24,151 p=16104 u=n01669400 n=ansible | TASK [webserver-n01669400 : Install Apache web server] *************************
+2025-04-12 19:31:24,331 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item={'mount': '/part2', 'device': '/dev/sdc2', 'fstype': 'ext4'})
+2025-04-12 19:31:24,364 p=16102 u=n01669400 n=ansible | TASK [webserver-n01669400 : Install Apache web server] *************************
+2025-04-12 19:31:24,440 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-0] => (item={'mount': '/part2', 'device': '/dev/sdc2', 'fstype': 'ext4'})
+2025-04-12 19:31:25,042 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2] => (item={'mount': '/part2', 'device': '/dev/sdc2', 'fstype': 'ext4'})
+2025-04-12 19:31:25,066 p=16106 u=n01669400 n=ansible | TASK [webserver-n01669400 : Install Apache web server] *************************
+2025-04-12 19:32:09,035 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:32:09,449 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:32:09,458 p=16104 u=n01669400 n=ansible | TASK [webserver-n01669400 : Create HTML files with FQDN] ***********************
+2025-04-12 19:32:11,250 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:32:11,983 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:32:12,005 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:32:12,016 p=16104 u=n01669400 n=ansible | TASK [webserver-n01669400 : Copy HTML files to web server directory] ***********
+2025-04-12 19:32:12,914 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:32:12,942 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:32:12,953 p=16104 u=n01669400 n=ansible | TASK [webserver-n01669400 : Set permissions on index.html] *********************
+2025-04-12 19:32:13,835 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:32:13,876 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:32:13,918 p=16104 u=n01669400 n=ansible | TASK [webserver-n01669400 : Start Apache web server] ***************************
+2025-04-12 19:32:15,372 p=16102 u=n01669400 n=ansible | changed: [n9400-linux-0]
+2025-04-12 19:32:15,564 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:32:15,600 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:32:15,609 p=16104 u=n01669400 n=ansible | TASK [webserver-n01669400 : Enable Apache to start on boot] ********************
+2025-04-12 19:32:16,885 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:32:16,887 p=16104 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:32:17,006 p=16104 u=n01669400 n=ansible | PLAY RECAP *********************************************************************
+2025-04-12 19:32:17,006 p=16104 u=n01669400 n=ansible | n9400-linux-0              : ok=11   changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-04-12 19:32:17,006 p=16104 u=n01669400 n=ansible | n9400-linux-1              : ok=19   changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-12 19:32:17,006 p=16104 u=n01669400 n=ansible | n9400-linux-2              : ok=19   changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-12 19:32:49,680 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:32:50,765 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-0]
+2025-04-12 19:32:50,774 p=16106 u=n01669400 n=ansible | TASK [webserver-n01669400 : Create HTML files with FQDN] ***********************
+2025-04-12 19:32:51,129 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:32:51,149 p=16102 u=n01669400 n=ansible | TASK [webserver-n01669400 : Create HTML files with FQDN] ***********************
+2025-04-12 19:32:52,889 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:32:53,201 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:32:53,366 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:32:53,377 p=16106 u=n01669400 n=ansible | changed: [n9400-linux-0]
+2025-04-12 19:32:53,389 p=16106 u=n01669400 n=ansible | TASK [webserver-n01669400 : Copy HTML files to web server directory] ***********
+2025-04-12 19:32:53,526 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-0]
+2025-04-12 19:32:53,539 p=16102 u=n01669400 n=ansible | TASK [webserver-n01669400 : Copy HTML files to web server directory] ***********
+2025-04-12 19:32:54,444 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:32:54,513 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:32:54,516 p=16106 u=n01669400 n=ansible | changed: [n9400-linux-0]
+2025-04-12 19:32:54,527 p=16106 u=n01669400 n=ansible | TASK [webserver-n01669400 : Set permissions on index.html] *********************
+2025-04-12 19:32:54,655 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-0]
+2025-04-12 19:32:54,693 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:32:54,702 p=16102 u=n01669400 n=ansible | TASK [webserver-n01669400 : Set permissions on index.html] *********************
+2025-04-12 19:32:55,437 p=16106 u=n01669400 n=ansible | changed: [n9400-linux-0]
+2025-04-12 19:32:55,484 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:32:55,494 p=16106 u=n01669400 n=ansible | TASK [webserver-n01669400 : Start Apache web server] ***************************
+2025-04-12 19:32:55,568 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:32:55,796 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-0]
+2025-04-12 19:32:55,840 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:32:55,849 p=16102 u=n01669400 n=ansible | TASK [webserver-n01669400 : Start Apache web server] ***************************
+2025-04-12 19:32:57,457 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:32:57,527 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:32:57,741 p=16106 u=n01669400 n=ansible | changed: [n9400-linux-0]
+2025-04-12 19:32:57,749 p=16106 u=n01669400 n=ansible | TASK [webserver-n01669400 : Enable Apache to start on boot] ********************
+2025-04-12 19:32:57,911 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:32:57,999 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-0]
+2025-04-12 19:32:58,008 p=16102 u=n01669400 n=ansible | TASK [webserver-n01669400 : Enable Apache to start on boot] ********************
+2025-04-12 19:32:59,141 p=16106 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:32:59,141 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-1]
+2025-04-12 19:32:59,487 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-2]
+2025-04-12 19:32:59,683 p=16106 u=n01669400 n=ansible | changed: [n9400-linux-0]
+2025-04-12 19:32:59,727 p=16106 u=n01669400 n=ansible | RUNNING HANDLER [webserver-n01669400 : Restart Apache] *************************
+2025-04-12 19:32:59,802 p=16102 u=n01669400 n=ansible | ok: [n9400-linux-0]
+2025-04-12 19:32:59,970 p=16102 u=n01669400 n=ansible | PLAY RECAP *********************************************************************
+2025-04-12 19:32:59,970 p=16102 u=n01669400 n=ansible | n9400-linux-0              : ok=19   changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-12 19:32:59,971 p=16102 u=n01669400 n=ansible | n9400-linux-1              : ok=19   changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-12 19:32:59,971 p=16102 u=n01669400 n=ansible | n9400-linux-2              : ok=19   changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-12 19:33:02,145 p=16106 u=n01669400 n=ansible | changed: [n9400-linux-0]
+2025-04-12 19:33:02,164 p=16106 u=n01669400 n=ansible | PLAY RECAP *********************************************************************
+2025-04-12 19:33:02,164 p=16106 u=n01669400 n=ansible | n9400-linux-0              : ok=20   changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-12 19:33:02,164 p=16106 u=n01669400 n=ansible | n9400-linux-1              : ok=7    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-04-12 19:33:02,164 p=16106 u=n01669400 n=ansible | n9400-linux-2              : ok=19   changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

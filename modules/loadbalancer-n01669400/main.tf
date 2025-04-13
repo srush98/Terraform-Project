@@ -13,7 +13,6 @@ resource "azurerm_lb" "lb" {
   }
 
   tags = var.tags
-
 }
 
 # Resource block for creating an Azure Public IP
