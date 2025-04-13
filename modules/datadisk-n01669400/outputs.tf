@@ -19,3 +19,8 @@ output "windows_disk_attachment" {
   description = "The data disk attachment LUN for the Windows VM."
   value       = azurerm_virtual_machine_data_disk_attachment.windows_disk.lun
 }
+
+output "linux_disk_ids" {
+  description = "The list of Linux managed disk IDs."
+  value       = [for d in values(azurerm_managed_disk.disks) : d.id]
+}

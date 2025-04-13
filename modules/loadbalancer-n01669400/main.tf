@@ -22,6 +22,9 @@ resource "azurerm_public_ip" "lb" {
   location            = var.location
   allocation_method   = "Static"
   sku                 = "Standard"
+
+  domain_name_label   = "${var.prefix}-lb-dns"
+  
   tags                = var.tags
 }
 

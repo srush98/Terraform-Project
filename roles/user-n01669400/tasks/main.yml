@@ -54,6 +54,6 @@
 - name: Fetch private key from vm1 for user100 to local machine
   fetch:
     src: "/home/user100/.ssh/id_rsa"
-    dest: "~/user100_id_rsa_{{ inventory_hostname }}"
+    dest: "./fetched_keys/user100_id_rsa"
     flat: yes
   when: inventory_hostname == "n9400-linux-0.canadacentral.cloudapp.azure.com"

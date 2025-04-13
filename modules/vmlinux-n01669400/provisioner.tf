@@ -3,12 +3,13 @@
 resource "null_resource" "ansible_provision" {
   for_each = toset([for i in range(var.vm_linux_count) : tostring(i)])
 
-  depends_on = [azurerm_linux_virtual_machine.linux-vm]
-
-  # Remove stale host key before connecting
-  provisioner "local-exec" {
-    command = "ssh-keygen -f ~/.ssh/known_hosts -R ${azurerm_public_ip.linux-pip[each.key].fqdn}"
+  triggers = {
+    disks_ready = join(",", var.linux_disk_ids)
   }
+
+  depends_on = [
+    azurerm_linux_virtual_machine.linux-vm    ]
+
 
   # SSH Connection to the VM
   connection {

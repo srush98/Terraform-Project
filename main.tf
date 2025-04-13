@@ -48,6 +48,7 @@ module "vmlinux" {
   storage_account_name = module.common_services.storage_account_name
   storage_account_key  = module.common_services.storage_account_primary_access_key
   vm_linux_size        = var.vm_linux_size
+  linux_disk_ids       = module.datadisk.linux_disk_ids
   tags                 = local.common_tags
 }
 

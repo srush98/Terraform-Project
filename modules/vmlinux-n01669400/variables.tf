@@ -57,3 +57,8 @@ variable "linux_image" {
     version   = "latest"
   }
 }
+
+variable "linux_disk_ids" {
+  type    = list(string)
+  default = []
+}
