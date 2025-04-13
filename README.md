@@ -1,12 +1,14 @@
 # Automation with Terraform
 
-## **Overview**
+## 📖 Overview
 
-This project focuses on automating infrastructure and configuration management in **Microsoft Azure** using **Terraform** and **Ansible**. The goal is to ensure **high availability, scalability, and security** while maintaining efficiency through Infrastructure as Code (IaC) principles.
+This project demonstrates end-to-end **cloud infrastructure automation** on Microsoft Azure using:
+- **Terraform** to provision and orchestrate Azure resources.
+- **Ansible** to configure virtual machines automatically.
 
-- **Terraform** provisions cloud infrastructure.
-- **Ansible** automates post-provisioning configuration and software setup.
+The infrastructure is designed to be **modular**, **scalable**, **secure**, and **fully parameterized** — making it flexible for real-world DevOps environments.
 
+---
 ## **Prerequisites**
 
 - **Azure Account** (Pay-as-you-go preferred)
@@ -21,58 +23,58 @@ This project focuses on automating infrastructure and configuration management i
 ```
 📁 automation-project
 │── 📂 modules
-│   ├── 📂 rgroup
+│   ├── 📂 rgroup-n01669400       # Resource Group
 │   │   ├── main.tf
 │   │   ├── variables.tf
 │   │   ├── outputs.tf
-│   ├── 📂 network
+│   ├── 📂 network-n01669400      # VNet, Subnet, NSG         
 │   │   ├── main.tf
 │   │   ├── variables.tf
 │   │   ├── outputs.tf
-│   ├── 📂 common
+│   ├── 📂 common-n01669400       # Storage, Monitor, Recovery Vault
 │   │   ├── main.tf
 │   │   ├── variables.tf
 │   │   ├── outputs.tf
-│   ├── 📂 vmlinux
+│   ├── 📂 vmlinux-n01669400      # Linux VMs (with provisioner)
 │   │   ├── main.tf
 │   │   ├── variables.tf
 │   │   ├── outputs.tf
 │   │   ├── provisioner.tf
-│   ├── 📂 vmwindows
+│   ├── 📂 vmwindows-n01669400    # Windows VM
 │   │   ├── main.tf
 │   │   ├── variables.tf
 │   │   ├── outputs.tf
-│   ├── 📂 datadisk
+│   ├── 📂 datadisk-n01669400     # 10GB Data Disks
 │   │   ├── main.tf
 │   │   ├── variables.tf
 │   │   ├── outputs.tf
-│   ├── 📂 loadbalancer
+│   ├── 📂 loadbalancer-n01669400     # Public Load Balancer
 │   │   ├── main.tf
 │   │   ├── variables.tf
 │   │   ├── outputs.tf
-│   ├── 📂 database
+│   ├── 📂 database-n01669400      # Azure PostgreSQL
 │   │   ├── main.tf
 │   │   ├── variables.tf
 │   │   ├── outputs.tf
-├── 📂 roles
-│   ├── profile-n01669400
+├── 📂 roles                          # Ansible Roles
+│   ├── profile-n01669400/            # Add TMOUT to /etc/profile
 │   │   ├── tasks/main.yml
-│   ├── user-n01669400
+│   ├── user-n01669400/               # Users + SSH Keys + Groups
 │   │   ├── tasks/main.yml
-│   ├── datadisk-n01669400
+│   ├── datadisk-n01669400/           # Partition + Mount /part1, /part2
 │   │   ├── tasks/main.yml
-│   ├── webserver-n01669400
+│   ├── webserver-n01669400/          # Apache + Hostname Website
 │   │   ├── tasks/main.yml
-├── inventory.ini  # Defines target VMs
-├── n01669400-playbook.yml  # Main Ansible playbook
-├── ansible.cfg   # Configuration file
-│── 📄 .gitignore
-│── 📄 providers.tf
-│── 📄 variables.tf
-│── 📄 backend.tf
-│── 📄 main.tf
-│── 📄 outputs.tf
-│── 📄 README.md
+├── inventory.ini                     # Hosts file for Ansible
+├── n01669400-playbook.yml            # Ansible playbook
+├── ansible.cfg                       # Ansible configuration
+├── providers.tf                      # Azure provider
+├── backend.tf                        # Remote state backend
+├── main.tf                           # Root module wiring
+├── outputs.tf                        # Output values
+├── variables.tf                      # Root-level inputs
+├── .gitignore
+└── README.md                         # 👈 This file
 ```
 
 ## **Terraform Features Used**
@@ -139,12 +141,12 @@ This project focuses on automating infrastructure and configuration management i
 
 ## **Ansible Roles Developed**
 
-### **1. Profile Update Role (`profile-HumberID`)**
+### **1. Profile Update Role (`profile-n01669400`)**
 
 - Appends a test block to `/etc/profile`
 - Sets an auto-logout timeout (`TMOUT=1500`)
 
-### **2. User & Group Management Role (`user-HumberID`)**
+### **2. User & Group Management Role (`user-n01669400`)**
 
 - Creates **group**: `cloudadmins`
 - Creates **users**: `user100`, `user200`, `user300`
@@ -152,13 +154,13 @@ This project focuses on automating infrastructure and configuration management i
 - Generates SSH keys for each user (no passphrase)
 - Downloads the **private key** for `user100` from `VM1`
 
-### **3. Disk Configuration Role (`datadisk-HumberID`)**
+### **3. Disk Configuration Role (`datadisk-n01669400`)**
 
 - Partitions the **10GB** disk:
   - **4GB partition** → XFS, mounted at `/part1`
   - **5GB partition** → EXT4, mounted at `/part2`
 
-### **4. Web Server Role (`webserver-HumberID`)**
+### **4. Web Server Role (`webserver-n01669400`)**
 
 - Installs and configures **Apache**
 - Creates **custom index.html** with node FQDN
@@ -344,6 +346,32 @@ Upon successful deployment, Terraform will print:
   ```
 
 ---
+
+## **Features & Automation Goals**
+✅ Terraform:
+- Multi-module setup with reusable child modules
+- for_each and count for VM scalability
+- Azure availability sets, storage, virtual networks, and subnets
+- Load Balancer with Linux VMs as backend pool
+- PostgreSQL instance deployment
+- Remote backend with Azure Storage Account
+- Output of public/private IPs, FQDNs, hostnames
+- null_resource provisioner to run Ansible playbook
+
+✅ Ansible:
+- User Role: Creates cloudadmins, user100/200/300, sets up SSH (no passphrase)
+- Profile Role: Appends session timeout config to /etc/profile
+- Disk Role: Creates and mounts /part1 (XFS) and /part2 (EXT4)
+- Webserver Role: Deploys Apache, sets up unique landing page using FQDN
+- Main playbook is non-interactively triggered via Terraform provisioner
+
+## **Reflections**
+This project was an excellent exercise in full-cycle DevOps automation. It allowed me to:
+
+- Integrate Ansible with Terraform seamlessly
+- Troubleshoot VM provisioning and SSH connectivity
+- Design modular, DRY, and scalable Terraform code
+- Automate tedious manual tasks with Ansible roles
 
 ## **Conclusion**
 
