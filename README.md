@@ -1,4 +1,4 @@
-# Automation with Terraform
+# Automation with Terraform and Ansible
 
 ## 📖 Overview
 
@@ -298,6 +298,7 @@ Upon successful deployment, Terraform will print:
 - **Azure Interfaces** (Azure Portal, CLI, Terraform)
 
 ## **Ansible**
+
 - User Role: Creates cloudadmins, user100/200/300, sets up SSH (no passphrase)
 - Profile Role: Appends session timeout config to /etc/profile
 - Disk Role: Creates and mounts /part1 (XFS) and /part2 (EXT4)
