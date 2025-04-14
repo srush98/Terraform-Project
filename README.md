@@ -276,7 +276,7 @@ Upon successful deployment, Terraform will print:
 
 ## **Technical Skills Demonstrated**
 
-### **Terraform Skills**
+### **Terraform**
 
 - Developing reusable code for provisioning Azure resources
 - Managing infrastructure resources (single & multiple instances)
@@ -297,68 +297,7 @@ Upon successful deployment, Terraform will print:
 - **Cost Optimization** (Efficient provisioning, VM shutdown when idle)
 - **Azure Interfaces** (Azure Portal, CLI, Terraform)
 
----
-
-## **Execution & Testing**
-
-### **Phase I – Pre-Provisioning Validation**
-
-1. **Initialize Terraform**
-   ```bash
-   terraform init
-   ```
-2. **Validate Configuration**
-   ```bash
-   terraform validate
-   ```
-3. **Plan Deployment**
-   ```bash
-   terraform plan
-   ```
-
-### **Phase II – Provisioning**
-
-- Deploy infrastructure:
-  ```bash
-  terraform apply --auto-approve
-  ```
-
-### **Phase III – Post-Provisioning Validation**
-
-1. **Check Terraform State**
-
-   ```bash
-   terraform state list | nl
-   ```
-
-2. **Retrieve Outputs**
-   ```bash
-   terraform output
-   ```
-
----
-
-### **Cleanup (Cost Management)**
-
-- Destroy all provisioned resources after completion:
-  ```bash
-  terraform destroy --auto-approve
-  ```
-
----
-
-## **Features & Automation Goals**
-✅ Terraform:
-- Multi-module setup with reusable child modules
-- for_each and count for VM scalability
-- Azure availability sets, storage, virtual networks, and subnets
-- Load Balancer with Linux VMs as backend pool
-- PostgreSQL instance deployment
-- Remote backend with Azure Storage Account
-- Output of public/private IPs, FQDNs, hostnames
-- null_resource provisioner to run Ansible playbook
-
-✅ Ansible:
+## **Ansible**
 - User Role: Creates cloudadmins, user100/200/300, sets up SSH (no passphrase)
 - Profile Role: Appends session timeout config to /etc/profile
 - Disk Role: Creates and mounts /part1 (XFS) and /part2 (EXT4)
